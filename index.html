@@ -1347,34 +1347,52 @@
 
   </footer>
 
-  <script>
-    function scrollToSignup() {
-      document
-        .getElementById("signup")
-        .scrollIntoView({ behavior: "smooth" });
+<script type="module">
+  import { supabase } from "./supabase.js";
+
+  const form = document.getElementById("signupForm");
+  const status = document.getElementById("signupStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!name || !email || !password) {
+      status.textContent = "Please fill in all the fields.";
+      return;
     }
 
-    const form = document.getElementById("signupForm");
-    const status = document.getElementById("status");
+    if (password.length < 8) {
+      status.textContent = "Password must be at least 8 characters.";
+      return;
+    }
 
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
+    status.textContent = "Creating your membership…";
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-
-      if (!name || !email) return;
-
-      status.textContent =
-        "You're on the list ✦ We'll be in touch.";
-
-      status.style.color = "#d96e87";
-
-      form.reset();
+    const { error } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        data: {
+          full_name: name
+        }
+      }
     });
-  </script>
-  
-  <script type="module" src="supabase.js"></script>
+
+    if (error) {
+      status.textContent = error.message;
+      return;
+    }
+
+    status.textContent =
+      "You're officially on the list ✦ Check your email to confirm your membership.";
+
+    form.reset();
+  });
+</script>
 
 </body>
 </html>
