@@ -4,25 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BADDIES CLUB — Soft Life, Strong Will</title>
+<title>BADDIES Club — The Soft Life, Edited</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --cream:#f8eee8;
-  --paper:#fffaf6;
-  --pink:#e88a9d;
-  --pink2:#d96d84;
-  --plum:#3b2031;
-  --soft:#755866;
-  --lilac:#e8def2;
-  --mint:#dcece2;
-  --peach:#f2c7a9;
-  --black:#191419;
-  --line:rgba(59,32,49,.14);
+  --paper:#f8eee8;
+  --paper2:#f2e0d7;
+  --ink:#241820;
+  --muted:#77656d;
+  --pink:#df8297;
+  --pink2:#f0b4bf;
+  --burgundy:#4a2637;
+  --cream:#fffaf6;
+  --line:rgba(36,24,32,.14);
+  --green:#d8e5d8;
+  --lavender:#e2d8eb;
+  --yellow:#f1dfae;
 }
 
 *{
@@ -36,8 +39,8 @@ html{
 }
 
 body{
-  background:var(--cream);
-  color:var(--plum);
+  background:var(--paper);
+  color:var(--ink);
   font-family:"DM Sans",sans-serif;
   overflow-x:hidden;
 }
@@ -51,24 +54,28 @@ button{
   cursor:pointer;
 }
 
-.serif{
-  font-family:"DM Serif Display",serif;
+img{
+  max-width:100%;
+  display:block;
 }
 
-.marker{
-  font-family:"Permanent Marker",cursive;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-/* ================= NAV ================= */
+/* =========================
+   NAV
+========================= */
 
-nav{
+.nav{
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
   height:76px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   padding:0 5vw;
   background:rgba(248,238,232,.9);
   backdrop-filter:blur(16px);
@@ -76,12 +83,16 @@ nav{
 }
 
 .logo{
-  font-family:"DM Serif Display",serif;
-  font-size:1.35rem;
+  font-family:"Playfair Display",serif;
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-1px;
 }
 
-.logo i{
-  color:var(--pink2);
+.logo span{
+  color:var(--pink);
+  font-style:italic;
+  font-weight:500;
 }
 
 .nav-links{
@@ -90,33 +101,43 @@ nav{
   align-items:center;
 }
 
-.nav-links a{
-  text-decoration:none;
-  font-size:.82rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-
-.nav-button{
-  background:var(--plum);
-  color:white;
+.nav-links button{
+  background:none;
   border:0;
-  padding:11px 21px;
-  border-radius:100px;
-  font-weight:700;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:600;
 }
 
-/* ================= HERO ================= */
+.nav-links button:hover{
+  color:var(--pink);
+}
+
+.nav-join{
+  background:var(--ink)!important;
+  color:white!important;
+  border-radius:999px;
+  padding:11px 20px;
+}
+
+.nav-join:hover{
+  background:var(--pink)!important;
+  color:white!important;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  min-height:90vh;
+  min-height:88vh;
   display:grid;
   grid-template-columns:1fr 1fr;
+  gap:6vw;
   align-items:center;
-  gap:5vw;
-  padding:8vh 7vw;
+  padding:7vw 7vw;
   position:relative;
+  overflow:hidden;
 }
 
 .hero-copy{
@@ -125,294 +146,395 @@ nav{
 }
 
 .kicker{
-  color:var(--pink2);
+  font-family:"DM Mono",monospace;
+  font-size:11px;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.75rem;
-  font-weight:800;
-  margin-bottom:20px;
+  color:var(--pink);
+  margin-bottom:22px;
 }
 
 .hero h1{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(4rem,8vw,8rem);
-  line-height:.82;
-  letter-spacing:-.05em;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(58px,8vw,115px);
+  line-height:.86;
+  letter-spacing:-.065em;
+  font-weight:600;
 }
 
 .hero h1 em{
-  color:var(--pink2);
+  color:var(--pink);
+  font-weight:500;
 }
 
-.hero-copy p{
-  max-width:500px;
+.hero-text{
+  max-width:480px;
   margin:30px 0;
-  color:var(--soft);
+  color:var(--muted);
   line-height:1.7;
-  font-size:1.05rem;
+  font-size:16px;
 }
 
-.hero-buttons{
+.hero-actions{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
 }
 
-.primary{
-  background:var(--plum);
-  color:white;
+.btn{
   border:0;
-  padding:15px 27px;
-  border-radius:100px;
+  padding:15px 25px;
+  border-radius:999px;
   font-weight:700;
+  transition:.25s ease;
 }
 
-.secondary{
+.btn-dark{
+  background:var(--ink);
+  color:white;
+}
+
+.btn-dark:hover{
+  background:var(--pink);
+  transform:translateY(-2px);
+}
+
+.btn-outline{
   background:transparent;
-  color:var(--plum);
-  border:1px solid var(--plum);
-  padding:14px 27px;
-  border-radius:100px;
-  font-weight:700;
+  border:1px solid var(--ink);
 }
 
-.hero-editorial{
-  position:relative;
-  height:650px;
+.btn-outline:hover{
+  background:var(--ink);
+  color:white;
 }
 
 .hero-photo{
-  position:absolute;
-  width:70%;
-  height:85%;
-  right:4%;
-  top:4%;
-  background-image:url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=90");
-  background-size:cover;
-  background-position:center;
-  border-radius:3px;
-  filter:saturate(.85);
-  box-shadow:20px 25px 60px rgba(59,32,49,.2);
+  height:650px;
+  position:relative;
 }
 
-.hero-photo:after{
+.hero-photo-main{
+  position:absolute;
+  width:76%;
+  height:88%;
+  right:4%;
+  top:4%;
+  overflow:hidden;
+  background-image:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=90");
+  background-size:cover;
+  background-position:center;
+  filter:saturate(.85);
+}
+
+.hero-photo-main::after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
     135deg,
-    rgba(232,138,157,.18),
-    transparent 50%
+    rgba(255,255,255,.1),
+    transparent 50%,
+    rgba(40,20,30,.12)
   );
 }
 
 .hero-sticker{
   position:absolute;
-  left:4%;
-  bottom:12%;
-  background:var(--pink);
-  color:white;
-  padding:22px;
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  transform:rotate(-12deg);
-  font-weight:800;
-  font-size:.8rem;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+  left:0;
+  bottom:10%;
+  width:180px;
+  padding:24px;
+  background:var(--pink2);
+  transform:rotate(-7deg);
+  font-family:"Playfair Display",serif;
+  font-style:italic;
+  font-size:23px;
+  z-index:3;
 }
 
-/* ================= TICKER ================= */
+.hero-date{
+  position:absolute;
+  right:0;
+  top:0;
+  font-family:"DM Mono",monospace;
+  font-size:10px;
+  writing-mode:vertical-rl;
+  letter-spacing:.15em;
+}
 
-.ticker{
+/* =========================
+   MARQUEE
+========================= */
+
+.marquee{
   overflow:hidden;
-  background:var(--plum);
-  color:white;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
   padding:16px 0;
+  background:var(--paper2);
 }
 
-.ticker-track{
+.marquee-track{
   display:flex;
   width:max-content;
-  animation:ticker 28s linear infinite;
+  animation:marquee 25s linear infinite;
 }
 
-.ticker span{
-  padding:0 28px;
-  font-family:"DM Serif Display",serif;
-  font-size:1.25rem;
+.marquee span{
+  font-family:"DM Mono",monospace;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  padding:0 25px;
 }
 
-@keyframes ticker{
-  to{
-    transform:translateX(-50%);
-  }
+.marquee span::after{
+  content:"✦";
+  margin-left:50px;
+  color:var(--pink);
 }
 
-/* ================= MAGAZINE ================= */
+@keyframes marquee{
+  to{transform:translateX(-50%);}
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  padding:120px 7vw;
+  text-align:center;
+}
+
+.intro small{
+  font-family:"DM Mono",monospace;
+  color:var(--pink);
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.intro h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(38px,5vw,68px);
+  line-height:1;
+  max-width:850px;
+  margin:25px auto;
+  letter-spacing:-.04em;
+}
+
+.intro p{
+  max-width:620px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* =========================
+   PILLARS
+========================= */
+
+.pillars{
+  padding:30px 7vw 120px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.pillar{
+  min-height:350px;
+  padding:34px;
+  border:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+
+.pillar:nth-child(1){background:var(--lavender);}
+.pillar:nth-child(2){background:var(--green);}
+.pillar:nth-child(3){background:var(--yellow);}
+
+.pillar-number{
+  font-family:"DM Mono",monospace;
+  font-size:11px;
+}
+
+.pillar h3{
+  font-family:"Playfair Display",serif;
+  font-size:40px;
+  margin-top:90px;
+}
+
+.pillar p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:15px;
+  max-width:330px;
+}
+
+.pillar-symbol{
+  position:absolute;
+  right:25px;
+  top:22px;
+  font-size:48px;
+}
+
+/* =========================
+   MAGAZINE INTRO
+========================= */
 
 .magazine{
-  background:var(--paper);
-  padding:110px 6vw;
+  background:#1f151b;
+  color:#fff7f2;
+  padding:110px 7vw;
 }
 
-.mag-head{
+.magazine-header{
   display:flex;
   justify-content:space-between;
   align-items:end;
-  margin-bottom:55px;
   gap:30px;
+  margin-bottom:60px;
+}
+
+.magazine-label{
+  font-family:"DM Mono",monospace;
+  color:var(--pink2);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.magazine-title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(65px,12vw,160px);
+  line-height:.75;
+  letter-spacing:-.07em;
+  margin-top:20px;
 }
 
 .issue{
-  font-size:.75rem;
-  font-weight:800;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:var(--pink2);
+  text-align:right;
+  font-family:"DM Mono",monospace;
+  font-size:11px;
+  line-height:1.8;
 }
 
-.mag-title{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(3rem,7vw,7rem);
-  line-height:.85;
-}
-
-.mag-intro{
-  max-width:380px;
-  color:var(--soft);
-  line-height:1.6;
-}
-
-/* COVER */
+/* =========================
+   MAGAZINE COVER
+========================= */
 
 .cover{
+  max-width:1150px;
+  margin:auto;
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1.15fr .85fr;
   min-height:620px;
-  background:var(--pink);
-  margin-bottom:80px;
 }
 
 .cover-photo{
-  min-height:620px;
-  background-image:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=90");
+  background-image:url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=90");
   background-size:cover;
   background-position:center;
+  min-height:620px;
+  position:relative;
 }
 
-.cover-copy{
-  padding:60px;
+.cover-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(20,10,15,.05),
+    rgba(20,10,15,.3)
+  );
+}
+
+.cover-side{
+  background:#ead6cc;
+  color:var(--ink);
+  padding:45px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
 }
 
-.cover-logo{
-  font-family:"DM Serif Display",serif;
-  font-size:4rem;
-  color:white;
-  line-height:.8;
+.cover-masthead{
+  font-family:"Playfair Display",serif;
+  font-size:74px;
+  letter-spacing:-.08em;
+  line-height:.7;
 }
 
-.cover-copy h2{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(2.5rem,5vw,5rem);
-  line-height:.9;
-  color:var(--plum);
+.cover-masthead span{
+  color:var(--pink);
 }
 
-.cover-copy p{
-  color:rgba(59,32,49,.75);
-  line-height:1.6;
+.cover-headline{
+  font-family:"Playfair Display",serif;
+  font-size:40px;
+  line-height:1;
+}
+
+.cover-headline em{
+  color:var(--pink);
 }
 
 .cover-meta{
-  display:flex;
-  justify-content:space-between;
-  font-size:.7rem;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:800;
+  font-family:"DM Mono",monospace;
+  font-size:10px;
+  line-height:1.8;
 }
 
-/* ================= MAG TOOLBAR ================= */
+/* =========================
+   MAGAZINE NAV
+========================= */
 
-.mag-toolbar{
+.mag-nav{
+  max-width:1150px;
+  margin:50px auto 30px;
   display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:center;
-  margin-bottom:40px;
-  flex-wrap:wrap;
-}
-
-.filters{
-  display:flex;
-  gap:8px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
 .filter{
-  border:1px solid var(--line);
-  background:white;
-  padding:9px 15px;
-  border-radius:100px;
-  font-size:.78rem;
-  font-weight:700;
-}
-
-.filter.active{
-  background:var(--plum);
   color:white;
+  border:1px solid rgba(255,255,255,.3);
+  background:transparent;
+  border-radius:999px;
+  padding:10px 18px;
+  font-size:12px;
 }
 
-.search{
-  border:1px solid var(--line);
-  background:white;
-  padding:12px 16px;
-  border-radius:100px;
-  min-width:220px;
-  outline:none;
+.filter.active,
+.filter:hover{
+  background:var(--pink);
+  border-color:var(--pink);
 }
 
-/* ================= ARTICLE GRID ================= */
+/* =========================
+   ARTICLES
+========================= */
 
 .article-grid{
+  max-width:1150px;
+  margin:auto;
   display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:24px;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.article{
-  background:white;
-  border:1px solid var(--line);
+.article-card{
+  background:#f6eae4;
+  color:var(--ink);
   overflow:hidden;
   transition:.3s ease;
 }
 
-.article:hover{
+.article-card:hover{
   transform:translateY(-7px);
-  box-shadow:0 22px 50px rgba(59,32,49,.12);
-}
-
-.article:nth-child(1){
-  grid-column:span 7;
-}
-
-.article:nth-child(2){
-  grid-column:span 5;
-}
-
-.article:nth-child(3),
-.article:nth-child(4),
-.article:nth-child(5){
-  grid-column:span 4;
 }
 
 .article-image{
@@ -421,364 +543,448 @@ nav{
   background-position:center;
 }
 
-.article:nth-child(2) .article-image{
-  height:330px;
+.article-card:nth-child(1) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=90");
 }
 
-.article:nth-child(n+3) .article-image{
-  height:280px;
+.article-card:nth-child(2) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=90");
 }
 
-.article-body{
-  padding:27px;
+.article-card:nth-child(3) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90");
+}
+
+.article-card:nth-child(4) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=90");
+}
+
+.article-card:nth-child(5) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=90");
+}
+
+.article-card:nth-child(6) .article-image{
+  background-image:url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=90");
+}
+
+.article-info{
+  padding:24px;
 }
 
 .article-category{
-  color:var(--pink2);
-  font-size:.7rem;
+  font-family:"DM Mono",monospace;
+  color:var(--pink);
+  font-size:10px;
   text-transform:uppercase;
-  font-weight:800;
-  letter-spacing:.13em;
+  letter-spacing:.14em;
 }
 
-.article h3{
-  font-family:"DM Serif Display",serif;
-  font-size:2rem;
-  line-height:1;
-  margin:12px 0;
+.article-info h3{
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  line-height:1.05;
+  margin:13px 0;
 }
 
-.article p{
-  color:var(--soft);
+.article-info p{
+  color:var(--muted);
+  font-size:14px;
   line-height:1.6;
-  font-size:.9rem;
 }
 
 .read{
   margin-top:20px;
   background:none;
   border:0;
-  font-weight:800;
-  color:var(--plum);
-  text-decoration:underline;
-}
-
-/* ================= ARTICLE READER ================= */
-
-.reader{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:500;
-  background:var(--paper);
-  overflow-y:auto;
-}
-
-.reader.open{
-  display:block;
-}
-
-.reader-top{
-  position:sticky;
-  top:0;
-  z-index:5;
-  height:75px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 6vw;
-  background:rgba(255,250,246,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-
-.close-reader{
-  border:1px solid var(--line);
-  background:white;
-  border-radius:100px;
-  padding:10px 17px;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:4px;
+  font-size:12px;
   font-weight:700;
 }
 
-.reader-content{
-  max-width:850px;
-  margin:auto;
-  padding:90px 25px 120px;
-}
+/* =========================
+   FEATURE ARTICLE
+========================= */
 
-.reader-category{
-  color:var(--pink2);
-  text-transform:uppercase;
-  letter-spacing:.15em;
-  font-size:.75rem;
-  font-weight:800;
-}
-
-.reader h1{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(3rem,7vw,6.5rem);
-  line-height:.9;
-  margin:20px 0 30px;
-}
-
-.reader-hero{
-  width:100%;
-  height:500px;
-  object-fit:cover;
-  margin:20px 0 50px;
-}
-
-.reader-text{
-  max-width:680px;
-  margin:auto;
-  font-family:Georgia,serif;
-  font-size:1.15rem;
-  line-height:1.9;
-  color:#493742;
-}
-
-.reader-text p{
-  margin-bottom:25px;
-}
-
-.reader-text .dropcap:first-letter{
-  float:left;
-  font-family:"DM Serif Display",serif;
-  font-size:5rem;
-  line-height:.75;
-  padding-right:10px;
-  color:var(--pink2);
-}
-
-/* ================= CLUB ================= */
-
-.club{
-  padding:110px 6vw;
-  background:var(--cream);
-}
-
-.section-label{
-  color:var(--pink2);
-  font-weight:800;
-  letter-spacing:.15em;
-  font-size:.75rem;
-  text-transform:uppercase;
-  margin-bottom:15px;
-}
-
-.section-title{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(3rem,6vw,6rem);
-  line-height:.9;
-  max-width:800px;
-  margin-bottom:60px;
-}
-
-.pillars{
+.feature{
+  max-width:1150px;
+  margin:100px auto;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  grid-template-columns:1fr 1fr;
+  background:#e9d7d0;
+  color:var(--ink);
 }
 
-.pillar{
-  padding:38px;
-  min-height:310px;
-  border:1px solid var(--line);
+.feature-image{
+  min-height:550px;
+  background-image:url("https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=90");
+  background-size:cover;
+  background-position:center;
 }
 
-.pillar:nth-child(1){background:var(--lilac);}
-.pillar:nth-child(2){background:var(--mint);}
-.pillar:nth-child(3){background:var(--peach);}
-
-.pillar-number{
-  font-family:"DM Serif Display",serif;
-  font-size:3rem;
+.feature-copy{
+  padding:55px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-.pillar h3{
-  font-family:"DM Serif Display",serif;
-  font-size:2rem;
-  margin:35px 0 12px;
-}
-
-.pillar p{
-  line-height:1.6;
-  color:var(--soft);
-}
-
-/* ================= MEMBERSHIP ================= */
-
-.membership{
-  padding:110px 6vw;
-  background:var(--plum);
-  color:white;
-}
-
-.membership .section-label{
+.feature-copy small{
+  font-family:"DM Mono",monospace;
   color:var(--pink);
 }
 
-.membership .section-title{
-  color:var(--cream);
+.feature-copy h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(40px,5vw,65px);
+  line-height:.95;
+  margin:20px 0;
+}
+
+.feature-copy p{
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* =========================
+   ARTICLE MODAL
+========================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(20,12,17,.8);
+  backdrop-filter:blur(12px);
+  z-index:3000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.modal.open{
+  display:flex;
+}
+
+.modal-box{
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--cream);
+  color:var(--ink);
+  padding:55px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:22px;
+  top:20px;
+  border:0;
+  background:none;
+  font-size:25px;
+}
+
+.modal-category{
+  font-family:"DM Mono",monospace;
+  color:var(--pink);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.modal-box h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(40px,6vw,70px);
+  line-height:.95;
+  margin:18px 0 30px;
+}
+
+.modal-box .article-body{
+  max-width:680px;
+  font-family:"Playfair Display",serif;
+  font-size:19px;
+  line-height:1.8;
+}
+
+.article-body p{
+  margin-bottom:25px;
+}
+
+.article-body .dropcap:first-letter{
+  font-size:70px;
+  float:left;
+  line-height:.8;
+  padding-right:8px;
+  color:var(--pink);
+}
+
+/* =========================
+   CLUB PHOTO STRIP
+========================= */
+
+.photo-strip{
+  padding:100px 5vw;
+  background:var(--paper2);
+}
+
+.photo-strip-title{
+  text-align:center;
+  font-family:"Playfair Display",serif;
+  font-size:50px;
+  margin-bottom:45px;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:1.3fr .8fr .8fr 1.1fr;
+  height:460px;
+  gap:12px;
+}
+
+.photo-grid div{
+  background-size:cover;
+  background-position:center;
+}
+
+.photo-grid div:nth-child(1){
+  background-image:url("https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90");
+}
+
+.photo-grid div:nth-child(2){
+  background-image:url("https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=90");
+}
+
+.photo-grid div:nth-child(3){
+  background-image:url("https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=90");
+}
+
+.photo-grid div:nth-child(4){
+  background-image:url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90");
+}
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership{
+  padding:120px 7vw;
+}
+
+.membership-header{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+}
+
+.membership-header small{
+  font-family:"DM Mono",monospace;
+  color:var(--pink);
+}
+
+.membership-header h2{
+  font-family:"Playfair Display",serif;
+  font-size:65px;
+  line-height:.9;
+  margin:20px 0;
+}
+
+.membership-header p{
+  color:var(--muted);
+  line-height:1.7;
 }
 
 .tiers{
+  max-width:1100px;
+  margin:70px auto 0;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
 
 .tier{
-  background:var(--cream);
-  color:var(--plum);
-  padding:38px;
-  min-height:400px;
+  border:1px solid var(--line);
+  padding:35px;
+  min-height:390px;
   display:flex;
   flex-direction:column;
 }
 
 .tier.featured{
-  background:var(--pink);
+  background:var(--burgundy);
+  color:white;
+}
+
+.tier-tag{
+  font-family:"DM Mono",monospace;
+  font-size:10px;
+  color:var(--pink);
+  text-transform:uppercase;
 }
 
 .tier h3{
-  font-family:"DM Serif Display",serif;
-  font-size:2rem;
+  font-family:"Playfair Display",serif;
+  font-size:35px;
+  margin:25px 0 5px;
 }
 
 .price{
-  font-family:"DM Serif Display",serif;
-  font-size:3.5rem;
-  margin:20px 0;
+  font-family:"Playfair Display",serif;
+  font-size:45px;
+}
+
+.tier-desc{
+  color:var(--muted);
+  font-size:14px;
+  margin:15px 0;
+}
+
+.featured .tier-desc{
+  color:#d8c8ce;
 }
 
 .tier ul{
   list-style:none;
-  margin-bottom:30px;
+  margin:20px 0;
+  flex:1;
 }
 
 .tier li{
-  padding:11px 0;
-  border-bottom:1px solid var(--line);
-  font-size:.9rem;
+  padding:10px 0;
+  border-top:1px solid var(--line);
+  font-size:14px;
+}
+
+.featured li{
+  border-color:rgba(255,255,255,.15);
 }
 
 .tier button{
-  margin-top:auto;
-  border:0;
-  background:var(--plum);
-  color:white;
   padding:14px;
-  border-radius:100px;
+  border-radius:999px;
+  border:0;
+  background:var(--ink);
+  color:white;
   font-weight:700;
 }
 
-/* ================= JOIN ================= */
+.featured button{
+  background:var(--pink);
+}
 
-.join{
-  padding:110px 6vw;
+/* =========================
+   SIGNUP
+========================= */
+
+.signup{
+  background:var(--burgundy);
+  color:white;
+  padding:100px 7vw;
   text-align:center;
 }
 
-.join-box{
-  max-width:600px;
-  margin:auto;
-}
-
-.join h2{
-  font-family:"DM Serif Display",serif;
-  font-size:clamp(3rem,6vw,6rem);
+.signup h2{
+  font-family:"Playfair Display",serif;
+  font-size:60px;
   line-height:.9;
 }
 
-.join p{
-  color:var(--soft);
-  line-height:1.6;
-  margin:25px 0 35px;
+.signup p{
+  color:#d9cbd0;
+  margin:20px auto 35px;
 }
 
-.join-form{
-  display:flex;
-  gap:8px;
+.signup-form{
   max-width:500px;
   margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.join-form input{
-  flex:1;
-  border:1px solid var(--line);
-  background:white;
-  padding:15px 18px;
-  border-radius:100px;
-  outline:none;
-}
-
-.join-form button{
-  border:0;
-  background:var(--plum);
+.signup-form input{
+  padding:16px 18px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);
   color:white;
-  padding:15px 22px;
-  border-radius:100px;
+  outline:0;
+}
+
+.signup-form input::placeholder{
+  color:#c9b8bf;
+}
+
+.signup-form button{
+  padding:16px;
+  border:0;
+  border-radius:999px;
+  background:var(--pink);
+  color:var(--ink);
   font-weight:700;
 }
 
-.success{
+.signup-message{
   margin-top:15px;
-  color:#39734e;
-  font-weight:700;
   min-height:20px;
+  color:var(--pink2);
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  background:#24131e;
-  color:#e9dcd8;
-  padding:60px 6vw;
+  padding:55px 7vw;
   display:flex;
   justify-content:space-between;
   gap:30px;
   flex-wrap:wrap;
+  border-top:1px solid var(--line);
 }
 
-footer h3{
-  font-family:"DM Serif Display",serif;
-  font-size:2rem;
+.footer-logo{
+  font-family:"Playfair Display",serif;
+  font-size:25px;
 }
 
-footer a{
-  color:#e9dcd8;
-  text-decoration:none;
-  margin-left:20px;
+.footer-links{
+  display:flex;
+  gap:25px;
+  font-size:13px;
 }
 
-/* ================= RESPONSIVE ================= */
+.footer-links a:hover{
+  color:var(--pink);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:850px){
 
-  .nav-links{
+  .nav-links button:not(.nav-join){
     display:none;
   }
 
   .hero{
     grid-template-columns:1fr;
-    padding-top:60px;
-  }
-
-  .hero-editorial{
-    height:500px;
+    padding-top:70px;
   }
 
   .hero-photo{
-    width:80%;
+    height:500px;
   }
 
-  .mag-head{
-    flex-direction:column;
-    align-items:flex-start;
+  .pillars,
+  .tiers,
+  .article-grid{
+    grid-template-columns:1fr;
   }
 
-  .cover{
+  .cover,
+  .feature{
     grid-template-columns:1fr;
   }
 
@@ -786,71 +992,115 @@ footer a{
     min-height:500px;
   }
 
-  .cover-copy{
-    min-height:450px;
-    padding:40px;
+  .cover-side{
+    min-height:400px;
   }
 
-  .article-grid{
-    grid-template-columns:1fr;
+  .photo-grid{
+    grid-template-columns:1fr 1fr;
+    height:600px;
   }
 
-  .article,
-  .article:nth-child(1),
-  .article:nth-child(2),
-  .article:nth-child(3),
-  .article:nth-child(4),
-  .article:nth-child(5){
-    grid-column:auto;
+  .magazine-header{
+    display:block;
   }
 
-  .article-image,
-  .article:nth-child(2) .article-image,
-  .article:nth-child(n+3) .article-image{
-    height:360px;
+  .issue{
+    text-align:left;
+    margin-top:25px;
   }
 
-  .pillars,
-  .tiers{
-    grid-template-columns:1fr;
+}
+
+@media(max-width:520px){
+
+  .nav{
+    padding:0 20px;
   }
 
-  .join-form{
-    flex-direction:column;
+  .nav-join{
+    padding:9px 14px!important;
   }
 
-  .join-form button{
-    width:100%;
+  .hero{
+    padding:65px 22px;
   }
 
   .hero h1{
-    font-size:5rem;
+    font-size:62px;
   }
+
+  .hero-photo{
+    height:420px;
+  }
+
+  .hero-photo-main{
+    width:82%;
+  }
+
+  .intro,
+  .magazine,
+  .membership{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .pillars{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  .modal-box{
+    padding:35px 25px;
+  }
+
+  .photo-grid{
+    height:700px;
+  }
+
+  .magazine-title{
+    font-size:80px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<nav>
-  <div class="logo">BADDIES <i>club</i></div>
+<nav class="nav">
 
-  <div class="nav-links">
-    <a href="#magazine">Magazine</a>
-    <a href="#club">The Club</a>
-    <a href="#membership">Membership</a>
+  <div class="logo">
+    BADDIES <span>club</span>
   </div>
 
-  <button class="nav-button"
-    onclick="document.getElementById('membership').scrollIntoView()">
-    Join the Club
-  </button>
+  <div class="nav-links">
+
+    <button onclick="scrollToSection('magazine')">
+      Magazine
+    </button>
+
+    <button onclick="scrollToSection('club')">
+      The Club
+    </button>
+
+    <button class="nav-join" onclick="scrollToSection('join')">
+      Join the Club
+    </button>
+
+  </div>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
@@ -865,20 +1115,22 @@ footer a{
       <em>strong</em> will.
     </h1>
 
-    <p>
-      A modern club for movement, culture, friendship and
-      figuring yourself out. No perfection required.
+    <p class="hero-text">
+      Movement, stillness, culture and community — built for people
+      who want a life that feels good, looks good and actually means something.
     </p>
 
-    <div class="hero-buttons">
+    <div class="hero-actions">
 
-      <button class="primary"
-        onclick="document.getElementById('membership').scrollIntoView()">
+      <button
+        class="btn btn-dark"
+        onclick="scrollToSection('join')">
         Become a member
       </button>
 
-      <button class="secondary"
-        onclick="document.getElementById('magazine').scrollIntoView()">
+      <button
+        class="btn btn-outline"
+        onclick="scrollToSection('magazine')">
         Read the magazine
       </button>
 
@@ -887,14 +1139,17 @@ footer a{
   </div>
 
 
-  <div class="hero-editorial">
+  <div class="hero-photo">
 
-    <div class="hero-photo"></div>
+    <div class="hero-date">
+      ISSUE 01 · 2026
+    </div>
+
+    <div class="hero-photo-main"></div>
 
     <div class="hero-sticker">
-      BADDIES<br>
-      ISSUE 01<br>
-      2026
+      this is your<br>
+      soft era.
     </div>
 
   </div>
@@ -902,50 +1157,133 @@ footer a{
 </header>
 
 
-<!-- ================= TICKER ================= -->
+<!-- =========================
+     MARQUEE
+========================= -->
 
-<div class="ticker">
+<div class="marquee">
 
-  <div class="ticker-track">
+  <div class="marquee-track">
 
-    <span>MAIN CHARACTER ENERGY</span>
-    <span>SOFT LIFE / STRONG WILL</span>
-    <span>READ SOMETHING BEAUTIFUL</span>
-    <span>PROTECT YOUR PEACE</span>
-    <span>MAIN CHARACTER ENERGY</span>
-    <span>SOFT LIFE / STRONG WILL</span>
-    <span>READ SOMETHING BEAUTIFUL</span>
-    <span>PROTECT YOUR PEACE</span>
+    <span>main character energy</span>
+    <span>soft life · strong will</span>
+    <span>protect your peace</span>
+    <span>romanticise the ordinary</span>
+    <span>rest is part of the plan</span>
+
+    <span>main character energy</span>
+    <span>soft life · strong will</span>
+    <span>protect your peace</span>
+    <span>romanticise the ordinary</span>
+    <span>rest is part of the plan</span>
 
   </div>
 
 </div>
 
 
-<!-- ================= MAGAZINE ================= -->
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+  <small>THE CLUB</small>
+
+  <h2>
+    Wellness without the performance.
+  </h2>
+
+  <p>
+    BADDIES is a modern membership club for movement, recovery,
+    culture and connection. Come for the class. Stay for the people.
+    Leave feeling a little more like yourself.
+  </p>
+
+</section>
+
+
+<!-- =========================
+     PILLARS
+========================= -->
+
+<section class="pillars">
+
+  <article class="pillar">
+
+    <span class="pillar-number">01 / MOVEMENT</span>
+
+    <span class="pillar-symbol">✦</span>
+
+    <h3>Move.</h3>
+
+    <p>
+      Pilates, dance, strength and movement sessions designed
+      around energy rather than punishment.
+    </p>
+
+  </article>
+
+
+  <article class="pillar">
+
+    <span class="pillar-number">02 / STILLNESS</span>
+
+    <span class="pillar-symbol">☾</span>
+
+    <h3>Pause.</h3>
+
+    <p>
+      Breathwork, recovery, sound sessions and quiet spaces
+      for when doing less is exactly what you need.
+    </p>
+
+  </article>
+
+
+  <article class="pillar">
+
+    <span class="pillar-number">03 / COMMUNITY</span>
+
+    <span class="pillar-symbol">♡</span>
+
+    <h3>Connect.</h3>
+
+    <p>
+      Events, conversations, dinners and a members' community
+      that makes wellness feel social instead of solitary.
+    </p>
+
+  </article>
+
+</section>
+
+
+<!-- =========================
+     MAGAZINE
+========================= -->
 
 <section class="magazine" id="magazine">
 
-  <div class="mag-head">
+  <div class="magazine-header">
 
     <div>
 
-      <div class="issue">
-        BADDIES CLUB — ISSUE 01 / AUGUST 2026
+      <div class="magazine-label">
+        BADDIES EDITORIAL
       </div>
 
-      <div class="mag-title">
-        THE<br>
-        MAGAZINE
+      <div class="magazine-title">
+        BADDIES
       </div>
 
     </div>
 
-    <p class="mag-intro">
-      A digital editorial about becoming the person you
-      actually want to be — without turning your life into
-      another productivity project.
-    </p>
+    <div class="issue">
+      ISSUE 01<br>
+      AUGUST / 2026<br>
+      THE SOFT LIFE ISSUE
+    </div>
 
   </div>
 
@@ -956,40 +1294,23 @@ footer a{
 
     <div class="cover-photo"></div>
 
-    <div class="cover-copy">
+    <div class="cover-side">
 
-      <div>
-
-        <div class="cover-logo">
-          BADDIES
-        </div>
-
-        <div class="issue">
-          THE AUGUST ISSUE
-        </div>
-
+      <div class="cover-masthead">
+        BADDIES<br>
+        <span>01</span>
       </div>
 
-      <div>
-
-        <h2>
-          THE ART<br>
-          OF HAVING<br>
-          A LIFE.
-        </h2>
-
-        <p>
-          Why your twenties don't need to look impressive
-          to be meaningful.
-        </p>
-
+      <div class="cover-headline">
+        THE NEW<br>
+        <em>SOFT LIFE</em>
       </div>
 
       <div class="cover-meta">
-        <span>Culture</span>
-        <span>Wellness</span>
-        <span>Style</span>
-        <span>Mind</span>
+        WHY REST ISN'T LAZINESS<br>
+        BUILDING A LIFE THAT FITS<br>
+        THE ART OF DOING LESS<br>
+        PLUS: WHAT'S IN OUR BAGS
       </div>
 
     </div>
@@ -997,190 +1318,63 @@ footer a{
   </div>
 
 
-  <!-- TOOLBAR -->
+  <!-- FILTERS -->
 
-  <div class="mag-toolbar">
+  <div class="mag-nav">
 
-    <div class="filters">
+    <button class="filter active" data-filter="all">
+      All
+    </button>
 
-      <button class="filter active" data-filter="all">
-        All
-      </button>
+    <button class="filter" data-filter="mind">
+      Mind
+    </button>
 
-      <button class="filter" data-filter="culture">
-        Culture
-      </button>
+    <button class="filter" data-filter="wellness">
+      Wellness
+    </button>
 
-      <button class="filter" data-filter="wellness">
-        Wellness
-      </button>
+    <button class="filter" data-filter="style">
+      Style
+    </button>
 
-      <button class="filter" data-filter="style">
-        Style
-      </button>
-
-      <button class="filter" data-filter="mind">
-        Mind
-      </button>
-
-    </div>
-
-    <input
-      class="search"
-      id="articleSearch"
-      placeholder="Search the issue..."
-    >
+    <button class="filter" data-filter="culture">
+      Culture
+    </button>
 
   </div>
 
 
   <!-- ARTICLES -->
 
-  <div class="article-grid" id="articleGrid">
+  <div class="article-grid">
 
 
     <article
-      class="article"
-      data-category="culture"
-      data-search="having a life ambition culture success adulthood"
-    >
-
-      <div
-        class="article-image"
-        style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=90')">
-      </div>
-
-      <div class="article-body">
-
-        <div class="article-category">
-          Culture / Cover Story
-        </div>
-
-        <h3>
-          The art of having a life.
-        </h3>
-
-        <p>
-          Somewhere between ambition and exhaustion, we forgot
-          that a life can be valuable even when nobody is
-          measuring it.
-        </p>
-
-        <button
-          class="read"
-          onclick="openArticle('life')">
-          Read story →
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <article
-      class="article"
-      data-category="wellness"
-      data-search="rest wellness burnout recovery sleep routine"
-    >
-
-      <div
-        class="article-image"
-        style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=90')">
-      </div>
-
-      <div class="article-body">
-
-        <div class="article-category">
-          Wellness
-        </div>
-
-        <h3>
-          Rest is not a reward.
-        </h3>
-
-        <p>
-          What changes when rest stops being something you
-          have to earn first.
-        </p>
-
-        <button
-          class="read"
-          onclick="openArticle('rest')">
-          Read story →
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <article
-      class="article"
-      data-category="style"
-      data-search="style wardrobe clothes fashion personal style"
-    >
-
-      <div
-        class="article-image"
-        style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=90')">
-      </div>
-
-      <div class="article-body">
-
-        <div class="article-category">
-          Style
-        </div>
-
-        <h3>
-          Dressing like yourself.
-        </h3>
-
-        <p>
-          Personal style isn't about owning more. It's about
-          recognizing what already feels like you.
-        </p>
-
-        <button
-          class="read"
-          onclick="openArticle('style')">
-          Read story →
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <article
-      class="article"
+      class="article-card"
       data-category="mind"
-      data-search="identity comparison social media confidence mind"
-    >
+      data-title="The New Definition of Ambition"
+      data-category-label="Mind">
 
-      <div
-        class="article-image"
-        style="background-image:url('https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=1200&q=90')">
-      </div>
+      <div class="article-image"></div>
 
-      <div class="article-body">
+      <div class="article-info">
 
         <div class="article-category">
           Mind
         </div>
 
         <h3>
-          Stop auditioning for your own life.
+          The New Definition of Ambition
         </h3>
 
         <p>
-          The strange pressure to constantly prove that you're
-          interesting, successful and becoming someone.
+          What happens when achievement stops being measured
+          by how exhausted you are?
         </p>
 
-        <button
-          class="read"
-          onclick="openArticle('mind')">
-          Read story →
+        <button class="read">
+          READ ARTICLE →
         </button>
 
       </div>
@@ -1189,185 +1383,275 @@ footer a{
 
 
     <article
-      class="article"
-      data-category="culture"
-      data-search="friendship friendships community girls friendship culture"
-    >
+      class="article-card"
+      data-category="wellness"
+      data-title="Rest Is Not a Reward"
+      data-category-label="Wellness">
 
-      <div
-        class="article-image"
-        style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=90')">
-      </div>
+      <div class="article-image"></div>
 
-      <div class="article-body">
+      <div class="article-info">
 
         <div class="article-category">
-          Culture
+          Wellness
         </div>
 
         <h3>
-          Friendship is a place.
+          Rest Is Not a Reward
         </h3>
 
         <p>
-          On making friendships that feel less like networking
-          and more like somewhere you can finally exhale.
+          A case for treating recovery as part of the routine,
+          rather than something you earn afterwards.
         </p>
 
-        <button
-          class="read"
-          onclick="openArticle('friends')">
-          Read story →
+        <button class="read">
+          READ ARTICLE →
         </button>
 
       </div>
 
     </article>
 
+
+    <article
+      class="article-card"
+      data-category="style"
+      data-title="Getting Dressed for Yourself"
+      data-category-label="Style">
+
+      <div class="article-image"></div>
+
+      <div class="article-info">
+
+        <div class="article-category">
+          Style
+        </div>
+
+        <h3>
+          Getting Dressed for Yourself
+        </h3>
+
+        <p>
+          Personal style gets interesting when the audience
+          disappears.
+        </p>
+
+        <button class="read">
+          READ ARTICLE →
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="article-card"
+      data-category="culture"
+      data-title="The Return of the Personal Magazine"
+      data-category-label="Culture">
+
+      <div class="article-image"></div>
+
+      <div class="article-info">
+
+        <div class="article-category">
+          Culture
+        </div>
+
+        <h3>
+          The Return of the Personal Magazine
+        </h3>
+
+        <p>
+          Why people are craving slower, more intentional
+          corners of the internet.
+        </p>
+
+        <button class="read">
+          READ ARTICLE →
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="article-card"
+      data-category="mind"
+      data-title="Your Attention Is Your Currency"
+      data-category-label="Mind">
+
+      <div class="article-image"></div>
+
+      <div class="article-info">
+
+        <div class="article-category">
+          Mind
+        </div>
+
+        <h3>
+          Your Attention Is Your Currency
+        </h3>
+
+        <p>
+          The quiet luxury of deciding what deserves your
+          attention — and what doesn't.
+        </p>
+
+        <button class="read">
+          READ ARTICLE →
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <article
+      class="article-card"
+      data-category="wellness"
+      data-title="A Sunday That Doesn't Need Fixing"
+      data-category-label="Wellness">
+
+      <div class="article-image"></div>
+
+      <div class="article-info">
+
+        <div class="article-category">
+          Wellness
+        </div>
+
+        <h3>
+          A Sunday That Doesn't Need Fixing
+        </h3>
+
+        <p>
+          An intentionally ordinary guide to resetting without
+          turning your weekend into another productivity project.
+        </p>
+
+        <button class="read">
+          READ ARTICLE →
+        </button>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <!-- FEATURE -->
+
+  <div class="feature">
+
+    <div class="feature-image"></div>
+
+    <div class="feature-copy">
+
+      <small>LONG READ · ISSUE 01</small>
+
+      <h2>
+        You don't need<br>
+        a new life.<br>
+        <em>You need room.</em>
+      </h2>
+
+      <p>
+        There is a particular kind of exhaustion that comes from
+        constantly trying to improve yourself. Another habit.
+        Another routine. Another version of yourself to become.
+
+        <br><br>
+
+        Maybe the next chapter isn't about adding more.
+        Maybe it is about making enough room to notice the life
+        that is already happening.
+      </p>
+
+    </div>
+
   </div>
 
 </section>
 
 
-<!-- ================= ARTICLE READER ================= -->
+<!-- =========================
+     PHOTO EDITORIAL
+========================= -->
 
-<div class="reader" id="reader">
+<section class="photo-strip">
 
-  <div class="reader-top">
-
-    <strong>
-      BADDIES <span style="color:var(--pink2)">club</span>
-    </strong>
-
-    <button
-      class="close-reader"
-      onclick="closeArticle()">
-      ← Back to magazine
-    </button>
-
-  </div>
-
-  <div class="reader-content">
-
-    <div
-      class="reader-category"
-      id="readerCategory">
-    </div>
-
-    <h1 id="readerTitle"></h1>
-
-    <img
-      class="reader-hero"
-      id="readerImage"
-      alt=""
-    >
-
-    <div
-      class="reader-text"
-      id="readerText">
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- ================= CLUB ================= -->
-
-<section class="club" id="club">
-
-  <div class="section-label">
-    THE CLUB
-  </div>
-
-  <h2 class="section-title">
-    Three things worth making space for.
+  <h2 class="photo-strip-title">
+    From the BADDIES camera roll
   </h2>
 
+  <div class="photo-grid">
 
-  <div class="pillars">
-
-    <div class="pillar">
-
-      <div class="pillar-number">01</div>
-
-      <h3>Movement</h3>
-
-      <p>
-        Pilates, dance, walks, strength and everything in
-        between. Movement because your body deserves to
-        experience life, not because you need to earn food
-        or rest.
-      </p>
-
-    </div>
-
-
-    <div class="pillar">
-
-      <div class="pillar-number">02</div>
-
-      <h3>Stillness</h3>
-
-      <p>
-        Quiet mornings, reading hours, breathwork and
-        genuinely doing nothing. We don't believe every
-        empty minute needs to become productive.
-      </p>
-
-    </div>
-
-
-    <div class="pillar">
-
-      <div class="pillar-number">03</div>
-
-      <h3>Community</h3>
-
-      <p>
-        Events, conversations and a space where you can
-        show up exactly as you are. The point isn't to
-        impress each other. It's to know each other.
-      </p>
-
-    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 
   </div>
 
 </section>
 
 
-<!-- ================= MEMBERSHIP ================= -->
+<!-- =========================
+     CLUB
+========================= -->
 
-<section class="membership" id="membership">
+<section class="membership" id="club">
 
-  <div class="section-label">
-    MEMBERSHIP
+  <div class="membership-header">
+
+    <small>MEMBERSHIP</small>
+
+    <h2>
+      Your card.<br>
+      Your club.
+    </h2>
+
+    <p>
+      Come for movement. Stay for the community.
+      Choose the membership that fits your actual life.
+    </p>
+
   </div>
-
-  <h2 class="section-title">
-    Pick your version of the club.
-  </h2>
 
 
   <div class="tiers">
 
+
     <div class="tier">
+
+      <span class="tier-tag">
+        START HERE
+      </span>
 
       <h3>Drop-In</h3>
 
       <div class="price">
-        Free
+        $0
+      </div>
+
+      <div class="tier-desc">
+        For trying the club without the commitment.
       </div>
 
       <ul>
-        <li>Magazine access</li>
-        <li>Community newsletter</li>
-        <li>Selected club events</li>
+        <li>Pay-per-class access</li>
+        <li>Members' booking system</li>
+        <li>Monthly editorial</li>
       </ul>
 
-      <button onclick="joinClub('Drop-In')">
-        Start here
+      <button onclick="joinMessage('Drop-In')">
+        Start free
       </button>
 
     </div>
@@ -1375,20 +1659,28 @@ footer a{
 
     <div class="tier featured">
 
+      <span class="tier-tag">
+        MOST LOVED
+      </span>
+
       <h3>The Club</h3>
 
       <div class="price">
         $79
       </div>
 
+      <div class="tier-desc">
+        Unlimited access across the club.
+      </div>
+
       <ul>
-        <li>Everything in Drop-In</li>
-        <li>Unlimited club sessions</li>
+        <li>Unlimited movement</li>
+        <li>Stillness sessions</li>
         <li>Members' lounge</li>
         <li>Monthly socials</li>
       </ul>
 
-      <button onclick="joinClub('The Club')">
+      <button onclick="joinMessage('The Club')">
         Join the club
       </button>
 
@@ -1397,454 +1689,527 @@ footer a{
 
     <div class="tier">
 
+      <span class="tier-tag">
+        INNER CIRCLE
+      </span>
+
       <h3>Inner Circle</h3>
 
       <div class="price">
         $149
       </div>
 
+      <div class="tier-desc">
+        The full experience with extra attention.
+      </div>
+
       <ul>
         <li>Everything in The Club</li>
         <li>Priority booking</li>
-        <li>Private community events</li>
-        <li>Quarterly member box</li>
+        <li>Monthly check-in</li>
+        <li>Quarterly editorial box</li>
       </ul>
 
-      <button onclick="joinClub('Inner Circle')">
-        Go deeper
+      <button onclick="joinMessage('Inner Circle')">
+        Go all in
       </button>
 
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- ================= JOIN ================= -->
+<!-- =========================
+     SIGNUP
+========================= -->
 
-<section class="join">
+<section class="signup" id="join">
 
-  <div class="join-box">
+  <h2>
+    Come inside.
+  </h2>
 
-    <div class="section-label">
-      GET THE NEXT ISSUE
-    </div>
+  <p>
+    Join the BADDIES list for new issues, club events and editorial drops.
+  </p>
 
-    <h2>
-      Stay in the loop.
-    </h2>
+  <form class="signup-form" id="signupForm">
 
-    <p>
-      New stories, club events and the next magazine issue —
-      delivered occasionally, never aggressively.
-    </p>
+    <input
+      type="text"
+      id="name"
+      placeholder="Your name"
+      required>
 
-    <form
-      class="join-form"
-      id="newsletterForm">
+    <input
+      type="email"
+      id="email"
+      placeholder="Your email"
+      required>
 
-      <input
-        id="newsletterEmail"
-        type="email"
-        placeholder="your@email.com"
-        required
-      >
+    <button type="submit">
+      Join BADDIES
+    </button>
 
-      <button type="submit">
-        Subscribe
-      </button>
+  </form>
 
-    </form>
-
-    <div
-      class="success"
-      id="newsletterSuccess">
-    </div>
-
+  <div
+    class="signup-message"
+    id="signupMessage">
   </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div>
-    <h3>BADDIES club</h3>
-    <p>Soft life. Strong will.</p>
+  <div class="footer-logo">
+    BADDIES club
   </div>
 
   <div>
-    <a href="#magazine">Magazine</a>
-    <a href="#club">Club</a>
-    <a href="#membership">Membership</a>
+    © 2026 BADDIES CLUB
+  </div>
+
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="mailto:hello@baddiesclub.com">
+      Contact
+    </a>
   </div>
 
 </footer>
 
 
+<!-- =========================
+     ARTICLE MODAL
+========================= -->
+
+<div class="modal" id="articleModal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeArticle()">
+      ×
+    </button>
+
+    <div
+      class="modal-category"
+      id="modalCategory">
+    </div>
+
+    <h2 id="modalTitle"></h2>
+
+    <div
+      class="article-body"
+      id="modalBody">
+    </div>
+
+  </div>
+
+</div>
+
+
 <script>
 
-/* ================= ARTICLE DATA ================= */
+/* =========================
+   SMOOTH NAVIGATION
+========================= */
+
+function scrollToSection(id){
+
+  document
+    .getElementById(id)
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   ARTICLE CONTENT
+========================= */
 
 const articles = {
 
-life:{
-category:"Culture / Cover Story",
-title:"The art of having a life.",
-image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=90",
-body:`
-<p class="dropcap">
-There is a particular kind of ambition that makes you
-very good at explaining what you are going to become and
-surprisingly bad at noticing who you already are.
-</p>
+  "The New Definition of Ambition": {
 
-<p>
-We are constantly encouraged to turn ourselves into
-projects. Better grades. Better habits. Better clothes.
-Better routines. A more impressive university. A more
-interesting life.
-</p>
+    category:"Mind",
 
-<p>
-None of those things are inherently bad. The problem starts
-when every experience becomes valuable only because it can
-be converted into evidence that we are succeeding.
-</p>
+    body:`
+      <p class="dropcap">
+        For a long time, ambition was presented as a very specific
+        image: early mornings, overflowing calendars, impressive
+        titles and the ability to answer an email before breakfast.
+      </p>
 
-<p>
-A quiet afternoon with a friend does not need to become
-a networking opportunity. Reading a book does not need
-to become a productivity ritual. Going for a walk does not
-need to be tracked.
-</p>
+      <p>
+        But exhaustion is not evidence of importance.
+        Being busy is not automatically the same thing as moving
+        forward.
+      </p>
 
-<p>
-Maybe growing up is partly learning the difference between
-building a life and building a résumé of one.
-</p>
+      <p>
+        A quieter definition of ambition asks a different question:
+        what kind of life are you actually trying to build?
+      </p>
 
-<p>
-The most interesting people are rarely interesting because
-they optimized every hour. They are interesting because
-they noticed things. They cared about things. They changed
-their minds. They laughed too loudly. They collected
-strange little stories.
-</p>
+      <p>
+        Maybe ambition means having enough time to read.
+        Maybe it means building something slowly. Maybe it means
+        becoming exceptionally good at something without documenting
+        every step of the process.
+      </p>
 
-<p>
-Your life is allowed to be more than proof that you are
-going somewhere.
-</p>
-`
-},
+      <p>
+        The point isn't to want less. It is to become more selective
+        about what is worth wanting.
+      </p>
+    `
 
-rest:{
-category:"Wellness",
-title:"Rest is not a reward.",
-image:"https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1400&q=90",
-body:`
-<p class="dropcap">
-Somewhere along the way, rest became something we were
-supposed to earn.
-</p>
+  },
 
-<p>
-Finish everything first. Answer everyone. Complete the
-assignment. Clean your room. Work harder. Then, maybe,
-you can lie down without feeling guilty about it.
-</p>
 
-<p>
-But exhaustion is not a moral achievement.
-</p>
+  "Rest Is Not a Reward": {
 
-<p>
-Rest is part of functioning. Sleep, quiet, boredom,
-unstructured time and days where you simply do less are
-not signs that you have lost your ambition.
-</p>
+    category:"Wellness",
 
-<p>
-A useful question is not “Did I do enough to deserve a
-break?” It is “What would help me feel more like myself
-again?”
-</p>
+    body:`
+      <p class="dropcap">
+        Rest has somehow become something we negotiate with ourselves.
+        Finish the work. Answer the messages. Complete the workout.
+        Then, perhaps, you can rest.
+      </p>
 
-<p>
-Sometimes the answer is movement. Sometimes it is a nap.
-Sometimes it is calling somebody you love. Sometimes it
-is putting your phone down and staring out a window.
-</p>
+      <p>
+        But recovery isn't the prize at the end of productivity.
+        It is part of the system that makes everything else possible.
+      </p>
 
-<p>
-You don't have to turn recovery into another competition.
-</p>
-`
-},
+      <p>
+        A useful reset can be remarkably ordinary: a walk without
+        your phone, an early night, an afternoon without plans,
+        sitting somewhere sunny with absolutely nothing to optimise.
+      </p>
 
-style:{
-category:"Style",
-title:"Dressing like yourself.",
-image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=90",
-body:`
-<p class="dropcap">
-Personal style begins when the audience disappears.
-</p>
+      <p>
+        The goal isn't to become perfectly balanced.
+        The goal is to stop treating exhaustion as a personality trait.
+      </p>
+    `
 
-<p>
-Not completely, obviously. Clothes are communication.
-We dress for occasions, cultures, weather and other people.
-But there is a difference between choosing something
-because it feels like you and choosing it because you think
-you are supposed to look like a particular version of
-cool.
-</p>
+  },
 
-<p>
-The easiest way to develop personal style is often to pay
-attention.
-</p>
 
-<p>
-Notice what you reach for repeatedly. Notice which pieces
-make you feel comfortable enough to forget about what
-you're wearing. Notice the colours, textures and silhouettes
-you keep saving.
-</p>
+  "Getting Dressed for Yourself": {
 
-<p>
-You don't need a completely new wardrobe. You need a
-better understanding of the one you already have.
-</p>
-`
-},
+    category:"Style",
 
-mind:{
-category:"Mind",
-title:"Stop auditioning for your own life.",
-image:"https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=1400&q=90",
-body:`
-<p class="dropcap">
-There is a strange exhaustion that comes from constantly
-imagining yourself being watched.
-</p>
+    body:`
+      <p class="dropcap">
+        Personal style becomes much more interesting when you stop
+        imagining an audience.
+      </p>
 
-<p>
-Would they think this is impressive? Does this photo look
-cool? Am I doing enough? Is everyone else ahead of me?
-</p>
+      <p>
+        Clothes can communicate, but they can also simply delight you.
+        A ridiculous pair of earrings. A jacket that makes you stand
+        differently. Shoes that are completely impractical but make
+        an ordinary Tuesday feel cinematic.
+      </p>
 
-<p>
-The imaginary audience can become incredibly loud.
-</p>
+      <p>
+        Trends can be useful references, but they don't have to become
+        instructions.
+      </p>
 
-<p>
-But most people are busy living their own lives. They are
-thinking about their own friendships, mistakes, plans and
-insecurities.
-</p>
+      <p>
+        The best wardrobe is rarely the one with the most pieces.
+        It is the one where the person wearing it recognises herself.
+      </p>
+    `
 
-<p>
-You are allowed to experiment without announcing the
-experiment. You are allowed to be bad at something before
-you become good at it. You are allowed to change your mind.
-</p>
+  },
 
-<p>
-A life becomes much lighter when you stop performing it
-and start participating in it.
-</p>
-`
-},
 
-friends:{
-category:"Culture",
-title:"Friendship is a place.",
-image:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=90",
-body:`
-<p class="dropcap">
-The best friendships have a strange physical quality.
-They feel like somewhere you can arrive.
-</p>
+  "The Return of the Personal Magazine": {
 
-<p>
-You don't have to be impressive there. You don't have to
-have the perfect story. You can show up tired, confused,
-excited, annoying, quiet or ridiculously happy.
-</p>
+    category:"Culture",
 
-<p>
-As we get older, friendship can accidentally start feeling
-like scheduling. Calendars. Plans. Replies. Group chats.
-</p>
+    body:`
+      <p class="dropcap">
+        The internet became faster and somehow started making us
+        hungry for slower things.
+      </p>
 
-<p>
-The answer isn't necessarily more social activity.
-Sometimes it is simply deeper attention.
-</p>
+      <p>
+        Personal newsletters, independent magazines, photo diaries
+        and tiny digital publications are having a moment because
+        they offer something feeds often don't: intention.
+      </p>
 
-<p>
-Ask better questions. Remember small details. Send the
-message when you think of someone. Make room for people
-to change.
-</p>
+      <p>
+        A magazine gives an idea room to breathe. It lets images sit
+        beside words. It creates a world instead of another isolated
+        post.
+      </p>
 
-<p>
-Good friendship isn't about constantly being entertained.
-It is about having somewhere to return to.
-</p>
-`
-}
+      <p>
+        Perhaps the appeal is simple. We don't always want more
+        content. Sometimes we want a place to stay for a while.
+      </p>
+    `
+
+  },
+
+
+  "Your Attention Is Your Currency": {
+
+    category:"Mind",
+
+    body:`
+      <p class="dropcap">
+        Attention is one of the few resources you spend without
+        seeing the receipt.
+      </p>
+
+      <p>
+        Ten minutes here. Twenty minutes there. A notification.
+        Another tab. Another conversation you weren't particularly
+        interested in but somehow ended up following.
+      </p>
+
+      <p>
+        Protecting attention does not require disappearing from the
+        world. It can simply mean deciding what deserves a response.
+      </p>
+
+      <p>
+        Your attention is a form of participation.
+        Spend it where you actually want to be present.
+      </p>
+    `
+
+  },
+
+
+  "A Sunday That Doesn't Need Fixing": {
+
+    category:"Wellness",
+
+    body:`
+      <p class="dropcap">
+        Sunday has become another productivity trap.
+        Meal prep. Deep clean. Plan the week. Organise your life.
+        Become a completely new person by Monday morning.
+      </p>
+
+      <p>
+        Or don't.
+      </p>
+
+      <p>
+        Make breakfast slowly. Put on music. Walk somewhere familiar.
+        Read three pages and abandon the book. Call someone you like.
+        Leave one thing undone.
+      </p>
+
+      <p>
+        A reset doesn't need to look impressive to work.
+        Sometimes the most restorative thing you can do is allow
+        a day to remain wonderfully ordinary.
+      </p>
+    `
+
+  }
 
 };
 
 
-/* ================= ARTICLE READER ================= */
+/* =========================
+   OPEN ARTICLES
+========================= */
 
-function openArticle(id){
+document
+  .querySelectorAll(".article-card")
+  .forEach(card => {
 
-  const article = articles[id];
+    card
+      .querySelector(".read")
+      .addEventListener("click", () => {
 
-  document.getElementById("readerCategory").textContent =
-    article.category;
+        const title =
+          card.dataset.title;
 
-  document.getElementById("readerTitle").textContent =
-    article.title;
+        const article =
+          articles[title];
 
-  document.getElementById("readerImage").src =
-    article.image;
+        document
+          .getElementById("modalCategory")
+          .textContent =
+          article.category;
 
-  document.getElementById("readerText").innerHTML =
-    article.body;
+        document
+          .getElementById("modalTitle")
+          .textContent =
+          title;
 
-  document.getElementById("reader").classList.add("open");
+        document
+          .getElementById("modalBody")
+          .innerHTML =
+          article.body;
 
-  document.body.style.overflow="hidden";
+        document
+          .getElementById("articleModal")
+          .classList
+          .add("open");
 
-  window.scrollTo(0,0);
-}
+        document.body.style.overflow="hidden";
+
+      });
+
+  });
 
 
 function closeArticle(){
 
-  document.getElementById("reader").classList.remove("open");
+  document
+    .getElementById("articleModal")
+    .classList
+    .remove("open");
 
   document.body.style.overflow="";
 
 }
 
 
-/* ================= FILTERS ================= */
+/* close modal by clicking background */
 
-const filters =
-document.querySelectorAll(".filter");
+document
+  .getElementById("articleModal")
+  .addEventListener("click",function(e){
 
-const articleCards =
-document.querySelectorAll(".article");
+    if(e.target === this){
+      closeArticle();
+    }
 
-filters.forEach(filter => {
+  });
 
-  filter.addEventListener("click",()=>{
 
-    filters.forEach(x =>
-      x.classList.remove("active")
-    );
+/* escape key */
 
-    filter.classList.add("active");
+document.addEventListener("keydown",function(e){
 
-    const selected =
-      filter.dataset.filter;
+  if(e.key === "Escape"){
+    closeArticle();
+  }
 
-    articleCards.forEach(card=>{
+});
 
-      if(
-        selected==="all" ||
-        card.dataset.category===selected
-      ){
-        card.style.display="";
-      }else{
-        card.style.display="none";
-      }
+
+/* =========================
+   MAGAZINE FILTER
+========================= */
+
+document
+  .querySelectorAll(".filter")
+  .forEach(button => {
+
+    button.addEventListener("click",function(){
+
+      document
+        .querySelectorAll(".filter")
+        .forEach(b =>
+          b.classList.remove("active")
+        );
+
+      this.classList.add("active");
+
+      const filter =
+        this.dataset.filter;
+
+      document
+        .querySelectorAll(".article-card")
+        .forEach(card => {
+
+          if(
+            filter === "all" ||
+            card.dataset.category === filter
+          ){
+
+            card.style.display="block";
+
+          }else{
+
+            card.style.display="none";
+
+          }
+
+        });
 
     });
 
   });
 
-});
 
-
-/* ================= SEARCH ================= */
+/* =========================
+   SIGNUP
+========================= */
 
 document
-.getElementById("articleSearch")
-.addEventListener("input",function(){
+  .getElementById("signupForm")
+  .addEventListener("submit",function(e){
 
-  const query =
-    this.value.toLowerCase().trim();
+    e.preventDefault();
 
-  articleCards.forEach(card=>{
+    const name =
+      document.getElementById("name").value.trim();
 
-    const text =
-      card.dataset.search.toLowerCase();
+    const email =
+      document.getElementById("email").value.trim();
 
-    card.style.display =
-      text.includes(query) ? "" : "none";
+    if(!name || !email) return;
+
+    const message =
+      document.getElementById("signupMessage");
+
+    message.textContent =
+      `You're on the list, ${name}. Welcome to BADDIES.`;
+
+    this.reset();
 
   });
 
-});
 
+/* =========================
+   MEMBERSHIP BUTTON
+========================= */
 
-/* ================= NEWSLETTER ================= */
+function joinMessage(plan){
 
-document
-.getElementById("newsletterForm")
-.addEventListener("submit",function(e){
+  scrollToSection("join");
 
-  e.preventDefault();
+  setTimeout(() => {
 
-  const email =
-    document.getElementById("newsletterEmail").value;
+    document
+      .getElementById("signupMessage")
+      .textContent =
+      `${plan} selected — enter your details below to join the list.`;
 
-  document.getElementById("newsletterSuccess").textContent =
-    `You're on the list — ${email}`;
-
-  this.reset();
-
-});
-
-
-/* ================= MEMBERSHIP ================= */
-
-function joinClub(tier){
-
-  document
-  .getElementById("newsletterEmail")
-  .scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-  });
-
-  document
-  .getElementById("newsletterEmail")
-  .focus();
+  },600);
 
 }
-
-
-/* ================= ESCAPE ================= */
-
-document.addEventListener("keydown",e=>{
-
-  if(e.key==="Escape"){
-    closeArticle();
-  }
-
-});
 
 </script>
 
