@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Baddies Club — A Digital Girls' Club</title>
+<title>Baddies Club — Girls Supporting Girls</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-  --cream:#f8eeea;
-  --cream2:#f3e4df;
-  --pink:#dc718a;
-  --pink-light:#efb2bd;
-  --plum:#38232f;
-  --muted:#775e68;
-  --line:rgba(56,35,47,.18);
-  --white:#fffaf8;
+  --cream:#f8eee9;
+  --pink:#e58aa0;
+  --pink-light:#f2c5cf;
+  --plum:#38212f;
+  --black:#111111;
+  --white:#fffdfb;
+  --line:rgba(56,33,47,.18);
+  --muted:#735d68;
 }
 
 *{
@@ -40,8 +42,8 @@ body{
 }
 
 img{
-  width:100%;
   display:block;
+  width:100%;
   object-fit:cover;
 }
 
@@ -50,641 +52,880 @@ a{
   font:inherit;
 }
 
+button{
+  cursor:pointer;
+}
+
 a{
   color:inherit;
   text-decoration:none;
 }
 
-/* ================= TOP BAR ================= */
+
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar{
   height:38px;
-  border-bottom:1px solid var(--line);
+  padding:0 3vw;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:0 5vw;
+  justify-content:space-between;
+
+  background:var(--pink-light);
+
+  border-bottom:1px solid var(--line);
+
   font-size:11px;
   letter-spacing:.12em;
   text-transform:uppercase;
 }
 
-.topbar span:last-child{
-  display:flex;
-  gap:12px;
-}
 
-/* ================= NAV ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   height:82px;
-  padding:0 5vw;
-  border-bottom:1px solid var(--line);
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
+  padding:0 4.5vw;
+
+  background:rgba(248,238,233,.96);
+
+  border-bottom:1px solid var(--line);
+
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(248,238,234,.94);
-  backdrop-filter:blur(15px);
+
+  backdrop-filter:blur(14px);
 }
 
 .logo{
-  font-family:"Playfair Display",serif;
-  font-size:30px;
-  font-weight:700;
-  white-space:nowrap;
+  font-family:"DM Serif Display",serif;
+  font-size:32px;
+  letter-spacing:-.04em;
 }
 
 .logo em{
   color:var(--pink);
-  font-weight:500;
 }
 
-.navlinks{
+.nav-links{
   display:flex;
-  gap:36px;
+  gap:38px;
   align-items:center;
+
   font-size:14px;
   font-weight:600;
 }
 
-.navlinks a{
-  transition:.2s;
+.nav-links a{
+  position:relative;
 }
 
-.navlinks a:hover,
-.navlinks a.active{
+.nav-links a:hover{
+  color:var(--pink);
+}
+
+.nav-links a.active{
   color:var(--pink);
 }
 
 .join-btn{
-  border:0;
   background:var(--plum);
   color:white;
+
+  border:0;
   border-radius:100px;
-  padding:13px 25px;
+
+  padding:15px 25px;
+
   font-weight:700;
-  cursor:pointer;
+
   transition:.25s;
 }
 
 .join-btn:hover{
-  background:var(--pink);
   transform:translateY(-2px);
+  background:var(--pink);
 }
 
-.menu{
-  display:none;
-  font-size:24px;
-  cursor:pointer;
-}
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  min-height:610px;
-  padding:70px 7vw 80px;
+  min-height:650px;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
+  grid-template-columns:42% 58%;
+
+  border-bottom:1px solid var(--line);
+
   position:relative;
   overflow:hidden;
 }
 
-.hero:before{
-  content:"";
-  width:370px;
-  height:370px;
-  background:#e6dbf0;
-  border-radius:50%;
-  position:absolute;
-  left:-180px;
-  top:20px;
-  opacity:.7;
-  filter:blur(4px);
-}
-
-.hero:after{
-  content:"";
-  width:300px;
-  height:300px;
-  background:#dce8dc;
-  border-radius:50%;
-  position:absolute;
-  right:-130px;
-  bottom:-150px;
-  opacity:.7;
-}
-
 .hero-copy{
+  padding:100px 7vw 80px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
   position:relative;
   z-index:2;
+}
+
+.hero-copy::before{
+  content:"";
+  position:absolute;
+
+  width:400px;
+  height:400px;
+
+  background:#e9dff1;
+
+  border-radius:50%;
+
+  left:-180px;
+  top:40px;
+
+  z-index:-1;
 }
 
 .kicker{
   color:var(--pink);
+
   font-size:12px;
   font-weight:700;
-  letter-spacing:.2em;
+
+  letter-spacing:.22em;
+
   text-transform:uppercase;
-  margin-bottom:25px;
+
+  margin-bottom:28px;
 }
 
 .hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(60px,7vw,108px);
-  line-height:.86;
+  font-family:"DM Serif Display",serif;
+
+  font-size:clamp(65px,7vw,112px);
+
+  line-height:.82;
+
   letter-spacing:-.055em;
-  max-width:650px;
+
+  max-width:700px;
 }
 
 .hero h1 em{
   color:var(--pink);
-  font-weight:500;
 }
 
-.hero-copy p{
-  max-width:480px;
-  margin-top:30px;
+.hero-line{
+  width:90px;
+  height:2px;
+
+  background:var(--plum);
+
+  margin:32px 0;
+}
+
+.hero-description{
+  max-width:470px;
+
   color:var(--muted);
+
   font-size:17px;
-  line-height:1.65;
+  line-height:1.7;
+
+  margin-bottom:32px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:14px;
-  margin-top:34px;
+  gap:18px;
+  align-items:center;
 }
 
-.primary{
+.primary-btn{
+  border:0;
+
   background:var(--plum);
   color:white;
-  border:0;
-  padding:16px 28px;
-  border-radius:100px;
+
+  padding:17px 28px;
+
   font-weight:700;
-  cursor:pointer;
+
+  border-radius:2px;
+
   transition:.25s;
 }
 
-.primary:hover{
+.primary-btn:hover{
   background:var(--pink);
   transform:translateY(-2px);
 }
 
-.secondary{
-  background:transparent;
-  border:1px solid var(--plum);
-  padding:15px 28px;
-  border-radius:100px;
-  cursor:pointer;
-  transition:.25s;
+.text-btn{
+  border:0;
+  background:none;
+
+  font-weight:700;
+
+  border-bottom:1px solid var(--plum);
+
+  padding-bottom:5px;
 }
 
-.secondary:hover{
-  background:var(--plum);
-  color:white;
-}
-
-/* ================= HERO COLLAGE ================= */
-
-.hero-collage{
-  height:500px;
+.hero-gallery{
   position:relative;
+  min-height:650px;
+
+  background:#eee2dd;
 }
 
-.photo{
+.hero-main{
   position:absolute;
+
+  width:62%;
+  height:88%;
+
+  left:4%;
+  top:6%;
+
   overflow:hidden;
-  box-shadow:0 20px 50px rgba(56,35,47,.18);
 }
 
-.photo.one{
-  width:56%;
-  height:66%;
-  right:0;
-  top:0;
-  z-index:2;
+.hero-main img{
+  height:100%;
 }
 
-.photo.two{
-  width:58%;
-  height:58%;
-  left:0;
-  bottom:0;
-  z-index:3;
-}
-
-.photo.three{
-  width:42%;
-  height:45%;
-  right:13%;
-  bottom:0;
-  z-index:1;
-}
-
-.tape{
+.hero-small{
   position:absolute;
-  width:110px;
-  height:27px;
-  background:rgba(242,216,207,.85);
-  transform:rotate(-8deg);
-  z-index:10;
+
+  width:28%;
+  height:28%;
+
+  right:5%;
+  top:9%;
+
+  border:6px solid var(--cream);
+
+  transform:rotate(2deg);
 }
 
-.tape.one{
-  top:39%;
-  left:23%;
+.hero-small img{
+  height:100%;
 }
 
-.tape.two{
-  right:17%;
-  top:49%;
-  transform:rotate(7deg);
+.hero-small-two{
+  position:absolute;
+
+  width:32%;
+  height:35%;
+
+  right:2%;
+  bottom:12%;
+
+  border:6px solid var(--cream);
+
+  transform:rotate(-6deg);
+}
+
+.hero-small-two img{
+  height:100%;
 }
 
 .note{
   position:absolute;
-  right:-5px;
+
+  right:3%;
   top:39%;
-  z-index:12;
-  background:#f5e5bf;
-  padding:20px 17px;
-  width:150px;
-  transform:rotate(5deg);
-  font-family:"Playfair Display",serif;
-  font-size:15px;
-  line-height:1.35;
+
+  width:220px;
+
+  padding:25px;
+
+  background:#f3dca5;
+
+  font-family:"DM Serif Display",serif;
+
+  font-size:20px;
+
+  transform:rotate(4deg);
+
+  box-shadow:0 12px 25px rgba(0,0,0,.08);
 }
 
-/* ================= MARQUEE ================= */
+.note::after{
+  content:"♡";
+
+  display:block;
+
+  font-family:sans-serif;
+
+  font-size:27px;
+
+  text-align:right;
+}
+
+
+/* =========================
+   MARQUEE
+========================= */
 
 .marquee{
-  border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  height:48px;
-  display:flex;
-  align-items:center;
+
+  padding:14px 0;
+
   overflow:hidden;
+
   white-space:nowrap;
-  background:var(--cream2);
+
+  background:var(--white);
 }
 
 .marquee-track{
-  display:flex;
-  gap:65px;
-  animation:move 25s linear infinite;
+  display:inline-flex;
+  gap:55px;
+
+  animation:marquee 25s linear infinite;
+
   font-size:12px;
-  font-weight:600;
-  letter-spacing:.14em;
+  font-weight:700;
+
+  letter-spacing:.12em;
   text-transform:uppercase;
 }
 
-@keyframes move{
+.marquee-track span::after{
+  content:"✦";
+  color:var(--pink);
+  margin-left:55px;
+}
+
+@keyframes marquee{
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
 
-/* ================= MAGAZINE ================= */
+
+/* =========================
+   MAGAZINE
+========================= */
 
 .magazine{
-  padding:90px 5vw;
+  padding:95px 4.5vw;
 }
 
-.magazine-head{
+.section-top{
   display:flex;
-  justify-content:space-between;
   align-items:end;
-  border-bottom:1px solid var(--line);
-  padding-bottom:25px;
-  margin-bottom:40px;
+  justify-content:space-between;
+
+  margin-bottom:45px;
 }
 
-.magazine-head h2{
-  font-family:"Playfair Display",serif;
-  font-size:55px;
-  line-height:.9;
+.section-top h2{
+  font-family:"DM Serif Display",serif;
+
+  font-size:58px;
+
+  letter-spacing:-.04em;
 }
 
-.magazine-head p{
-  color:var(--pink);
-  font-weight:700;
+.section-top h2::after{
+  content:"";
+
+  display:block;
+
+  width:105px;
+  height:4px;
+
+  background:var(--pink);
+
+  margin-top:-5px;
+}
+
+.view-all{
   font-size:12px;
+  font-weight:700;
   text-transform:uppercase;
-  letter-spacing:.12em;
+  letter-spacing:.1em;
 }
 
-.magazine-grid{
+.mag-grid{
   display:grid;
-  grid-template-columns:1.25fr 1fr 1fr;
-  gap:0;
+
+  grid-template-columns:2fr 1fr 1fr 1fr;
+
+  gap:18px;
 }
 
-.story{
-  padding:0 24px;
-  border-right:1px solid var(--line);
+.article{
+  border-top:1px solid var(--line);
+  padding-top:13px;
 }
 
-.story:first-child{
-  padding-left:0;
-}
-
-.story:last-child{
-  border-right:0;
-}
-
-.story-image{
-  height:340px;
-  overflow:hidden;
+.article img{
+  height:280px;
   margin-bottom:20px;
 }
 
-.story-image img{
-  height:100%;
-  transition:.5s;
+.article.featured img{
+  height:430px;
 }
 
-.story:hover img{
-  transform:scale(1.04);
-}
-
-.story-tag{
+.article-label{
   color:var(--pink);
+
   font-size:10px;
   font-weight:700;
+
   letter-spacing:.14em;
   text-transform:uppercase;
+
+  margin-bottom:9px;
 }
 
-.story h3{
-  font-family:"Playfair Display",serif;
+.article h3{
+  font-family:"DM Serif Display",serif;
+
   font-size:28px;
+
   line-height:1.05;
-  margin:10px 0;
+
+  margin-bottom:13px;
 }
 
-.story p{
+.article.featured h3{
+  font-size:38px;
+}
+
+.article p{
   color:var(--muted);
+
   line-height:1.55;
+
   font-size:14px;
+
+  max-width:320px;
 }
 
 .read{
   display:inline-block;
-  margin-top:22px;
+
+  margin-top:20px;
+
   font-size:11px;
+
   font-weight:700;
-  letter-spacing:.1em;
+
   text-transform:uppercase;
+
+  letter-spacing:.12em;
+
+  border-bottom:1px solid var(--plum);
+
+  padding-bottom:5px;
 }
 
-/* ================= FEATURE ================= */
 
-.feature{
-  padding:30px 5vw 100px;
-}
+/* =========================
+   CLUB FILES
+========================= */
 
-.feature-box{
-  min-height:500px;
-  background:var(--plum);
+.files{
+  background:var(--black);
+
   color:white;
+
+  padding:85px 4.5vw;
+
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:30% 70%;
+
+  gap:50px;
+
   overflow:hidden;
 }
 
-.feature-image{
-  min-height:500px;
-}
-
-.feature-image img{
-  height:100%;
-}
-
-.feature-copy{
-  padding:70px;
+.files-copy{
   display:flex;
-  justify-content:center;
   flex-direction:column;
+  justify-content:center;
 }
 
-.feature-copy .story-tag{
-  color:var(--pink-light);
-}
-
-.feature-copy h2{
-  font-family:"Playfair Display",serif;
-  font-size:55px;
-  line-height:1;
-  margin:18px 0;
-}
-
-.feature-copy p{
-  color:#e8d9dd;
-  line-height:1.7;
-  max-width:430px;
-}
-
-.feature-copy button{
-  margin-top:30px;
-  align-self:flex-start;
-}
-
-/* ================= EDITORIAL GRID ================= */
-
-.editorial{
-  padding:80px 5vw;
-}
-
-.editorial-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.editorial-title span{
+.files-label{
   color:var(--pink);
+
   font-size:11px;
-  font-weight:700;
+
   letter-spacing:.15em;
+
+  text-transform:uppercase;
+
+  font-weight:700;
+
+  margin-bottom:20px;
+}
+
+.files h2{
+  font-family:"DM Serif Display",serif;
+
+  font-size:58px;
+
+  line-height:.95;
+
+  margin-bottom:20px;
+}
+
+.files p{
+  color:#c8bcc1;
+
+  line-height:1.6;
+
+  max-width:350px;
+}
+
+.files-link{
+  margin-top:30px;
+
+  color:white;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:.1em;
+
   text-transform:uppercase;
 }
 
-.editorial-title h2{
-  font-family:"Playfair Display",serif;
-  font-size:50px;
-  margin-top:8px;
-}
-
-.editorial-grid{
+.files-grid{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+
+  gap:16px;
+
+  align-items:center;
 }
 
-.editorial-card{
-  border:1px solid var(--line);
-  background:var(--white);
+.polaroid{
+  background:#f7f2ed;
+
+  padding:9px 9px 30px;
+
+  color:#111;
+
+  transform:rotate(-3deg);
+
+  transition:.3s;
 }
 
-.editorial-card img{
-  height:270px;
+.polaroid:nth-child(2){
+  transform:rotate(4deg);
 }
 
-.editorial-card-content{
-  padding:20px;
+.polaroid:nth-child(3){
+  transform:rotate(-5deg);
 }
 
-.editorial-card h3{
-  font-family:"Playfair Display",serif;
-  font-size:23px;
-  line-height:1.1;
-  margin:7px 0;
+.polaroid:nth-child(4){
+  transform:rotate(3deg);
 }
 
-.editorial-card p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
+.polaroid:hover{
+  transform:translateY(-12px) rotate(0deg);
 }
 
-/* ================= MANIFESTO ================= */
+.polaroid img{
+  height:240px;
+}
 
-.manifesto{
-  padding:70px 8vw;
-  text-align:center;
-  border-top:1px solid var(--line);
+.polaroid span{
+  display:block;
+
+  font-family:"DM Serif Display",serif;
+
+  padding:10px 4px 0;
+
+  font-size:16px;
+}
+
+
+/* =========================
+   MEMBERSHIP
+========================= */
+
+.membership{
+  padding:100px 4.5vw;
+
   border-bottom:1px solid var(--line);
 }
 
-.manifesto p{
-  max-width:900px;
+.membership-inner{
+  max-width:1100px;
+
   margin:auto;
-  font-family:"Playfair Display",serif;
-  font-style:italic;
-  font-size:clamp(34px,5vw,65px);
-  line-height:1.05;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:70px;
+
+  align-items:center;
 }
 
-.manifesto span{
-  color:var(--pink);
+.membership h2{
+  font-family:"DM Serif Display",serif;
+
+  font-size:64px;
+
+  line-height:.9;
+
+  letter-spacing:-.04em;
 }
 
-/* ================= JOIN ================= */
+.membership-copy p{
+  color:var(--muted);
+
+  line-height:1.7;
+
+  margin:25px 0;
+}
+
+.membership-card{
+  padding:35px;
+
+  background:linear-gradient(
+    135deg,
+    #ef9daf,
+    #f7c8d1,
+    #d8c7e7
+  );
+
+  aspect-ratio:1.6;
+
+  border-radius:20px;
+
+  box-shadow:0 30px 60px rgba(56,33,47,.2);
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  transform:rotate(3deg);
+
+  transition:.4s;
+}
+
+.membership-card:hover{
+  transform:rotate(0deg) translateY(-8px);
+}
+
+.card-brand{
+  font-family:"DM Serif Display",serif;
+
+  font-size:25px;
+}
+
+.card-number{
+  font-family:monospace;
+
+  letter-spacing:.2em;
+
+  font-size:18px;
+}
+
+.card-bottom{
+  display:flex;
+  justify-content:space-between;
+
+  text-transform:uppercase;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:.1em;
+}
+
+
+/* =========================
+   JOIN
+========================= */
 
 .join{
-  padding:100px 5vw;
-  display:flex;
-  justify-content:center;
-}
+  padding:100px 4.5vw;
 
-.join-card{
-  width:min(850px,100%);
   text-align:center;
-  background:var(--cream2);
-  padding:70px 30px;
-  border:1px solid var(--line);
 }
 
-.join-card h2{
-  font-family:"Playfair Display",serif;
-  font-size:58px;
-  line-height:1;
+.join h2{
+  font-family:"DM Serif Display",serif;
+
+  font-size:70px;
+
+  letter-spacing:-.05em;
+
+  margin-bottom:20px;
 }
 
-.join-card p{
-  max-width:500px;
-  margin:20px auto 30px;
+.join p{
   color:var(--muted);
+
+  max-width:500px;
+
+  margin:0 auto 35px;
+
   line-height:1.6;
 }
 
-.join-form{
-  max-width:470px;
+.email-form{
+  max-width:620px;
+
   margin:auto;
+
   display:flex;
-  gap:10px;
+
+  border:1px solid var(--plum);
 }
 
-.join-form input{
+.email-form input{
   flex:1;
-  padding:15px 18px;
-  border:1px solid var(--line);
-  background:white;
-  outline:none;
-}
 
-.join-form button{
   border:0;
-  background:var(--plum);
-  color:white;
-  padding:0 25px;
-  cursor:pointer;
-  font-weight:700;
-}
 
-/* ================= FOOTER ================= */
+  background:transparent;
 
-footer{
-  border-top:1px solid var(--line);
-  padding:35px 5vw;
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:12px;
-}
+  padding:18px;
 
-.footer-logo{
-  font-family:"Playfair Display",serif;
-  font-size:22px;
+  outline:none;
+
   color:var(--plum);
 }
 
-/* ================= MOBILE ================= */
+.email-form button{
+  background:var(--plum);
+
+  color:white;
+
+  border:0;
+
+  padding:0 28px;
+
+  font-weight:700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+
+  padding:30px 4.5vw;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  font-size:12px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+}
+
+.footer-logo{
+  font-family:"DM Serif Display",serif;
+
+  font-size:24px;
+
+  text-transform:none;
+
+  letter-spacing:-.03em;
+}
+
+.footer-logo em{
+  color:var(--pink);
+}
+
+.footer-links{
+  display:flex;
+  gap:28px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
-  .navlinks{
+  .nav-links{
     display:none;
-  }
-
-  .menu{
-    display:block;
   }
 
   .hero{
     grid-template-columns:1fr;
-    padding-top:55px;
   }
 
-  .hero-collage{
-    height:420px;
+  .hero-copy{
+    padding:80px 7vw 50px;
   }
 
-  .magazine-grid{
-    grid-template-columns:1fr;
-    gap:45px;
+  .hero-gallery{
+    min-height:520px;
   }
 
-  .story{
-    border-right:0;
-    border-bottom:1px solid var(--line);
-    padding:0 0 35px;
+  .hero-main{
+    width:68%;
+    height:80%;
   }
 
-  .editorial-grid{
+  .note{
+    width:180px;
+    font-size:16px;
+  }
+
+  .mag-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  .feature-box{
+  .article.featured{
+    grid-column:span 2;
+  }
+
+  .files{
     grid-template-columns:1fr;
   }
 
-  .feature-copy{
-    padding:50px 35px;
+  .files-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .membership-inner{
+    grid-template-columns:1fr;
   }
 
 }
@@ -692,107 +933,113 @@ footer{
 @media(max-width:600px){
 
   .topbar{
-    font-size:9px;
+    font-size:8px;
   }
 
   nav{
     height:70px;
+    padding:0 5vw;
   }
 
   .logo{
-    font-size:24px;
+    font-size:25px;
   }
 
   .join-btn{
-    display:none;
-  }
-
-  .hero{
-    padding:55px 6vw;
+    padding:11px 17px;
+    font-size:12px;
   }
 
   .hero h1{
-    font-size:62px;
+    font-size:64px;
   }
 
-  .hero-collage{
-    height:330px;
+  .hero-gallery{
+    min-height:430px;
   }
 
-  .magazine{
-    padding:65px 6vw;
+  .hero-small{
+    width:32%;
   }
 
-  .magazine-head{
+  .hero-small-two{
+    width:38%;
+  }
+
+  .note{
+    width:150px;
+    padding:16px;
+    font-size:14px;
+  }
+
+  .section-top{
     display:block;
   }
 
-  .magazine-head h2{
+  .section-top h2{
     font-size:45px;
+    margin-bottom:20px;
   }
 
-  .magazine-head p{
-    margin-top:15px;
-  }
-
-  .story-image{
-    height:300px;
-  }
-
-  .editorial{
-    padding:60px 6vw;
-  }
-
-  .editorial-grid{
+  .mag-grid{
     grid-template-columns:1fr;
   }
 
-  .editorial-card img{
-    height:330px;
+  .article.featured{
+    grid-column:auto;
   }
 
-  .feature{
-    padding:20px 6vw 70px;
+  .article img,
+  .article.featured img{
+    height:340px;
   }
 
-  .feature-copy h2{
-    font-size:43px;
+  .files h2{
+    font-size:48px;
   }
 
-  .join{
-    padding:70px 6vw;
+  .membership h2{
+    font-size:52px;
   }
 
-  .join-card h2{
-    font-size:45px;
+  .join h2{
+    font-size:55px;
   }
 
-  .join-form{
+  .email-form{
+    display:flex;
     flex-direction:column;
+    border:0;
+    gap:10px;
   }
 
-  .join-form button{
-    padding:15px;
+  .email-form input{
+    border:1px solid var(--plum);
+  }
+
+  .email-form button{
+    padding:17px;
   }
 
   footer{
     flex-direction:column;
-    gap:15px;
+    gap:20px;
   }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- TOP LINE -->
+
+<!-- TOP STRIP -->
 
 <div class="topbar">
-  <span>Baddie is an energy, not an aesthetic.</span>
-  <span>
-    <span>Est. 2026</span>
-    <span>✦</span>
-  </span>
+  <span>BADDIE IS AN ENERGY, NOT AN AESTHETIC.</span>
+  <span>EST. 2026 ✦ GIRLS SUPPORTING GIRLS</span>
 </div>
 
 
@@ -800,23 +1047,22 @@ footer{
 
 <nav>
 
-  <div class="logo">
+  <a href="#" class="logo">
     Baddies <em>Club</em>
-  </div>
+  </a>
 
-  <div class="navlinks">
+  <div class="nav-links">
     <a href="#club">The Club</a>
-    <a href="#magazine">The Feed</a>
+    <a href="#feed">The Feed</a>
     <a href="#magazine" class="active">Magazine</a>
     <a href="#membership">Membership</a>
     <a href="#about">About</a>
   </div>
 
-  <button class="join-btn" onclick="goJoin()">
-    Join the Club
+  <button class="join-btn"
+    onclick="document.getElementById('join').scrollIntoView()">
+    Join the Club →
   </button>
-
-  <div class="menu">☰</div>
 
 </nav>
 
@@ -828,7 +1074,7 @@ footer{
   <div class="hero-copy">
 
     <div class="kicker">
-      Welcome to the club
+      ✳ Welcome to the club
     </div>
 
     <h1>
@@ -836,7 +1082,9 @@ footer{
       <em>Strong</em> will.
     </h1>
 
-    <p>
+    <div class="hero-line"></div>
+
+    <p class="hero-description">
       A digital girls' club for style, culture, ideas,
       ambition, creativity, and community.
       Come for the energy. Stay for the conversation.
@@ -844,12 +1092,16 @@ footer{
 
     <div class="hero-buttons">
 
-      <button class="primary" onclick="goJoin()">
+      <button
+        class="primary-btn"
+        onclick="document.getElementById('join').scrollIntoView()">
         Become a member
       </button>
 
-      <button class="secondary" onclick="document.getElementById('magazine').scrollIntoView()">
-        Explore the magazine
+      <button
+        class="text-btn"
+        onclick="document.getElementById('magazine').scrollIntoView()">
+        Explore the magazine →
       </button>
 
     </div>
@@ -857,24 +1109,25 @@ footer{
   </div>
 
 
-  <!-- COLLAGE -->
+  <div class="hero-gallery">
 
-  <div class="hero-collage">
-
-    <div class="photo one">
-      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85">
+    <div class="hero-main">
+      <img
+        src="images/hero_itgirl_scream.jpg"
+        alt="Baddies Club editorial portrait">
     </div>
 
-    <div class="photo two">
-      <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85">
+    <div class="hero-small">
+      <img
+        src="images/digicam_girl.jpg"
+        alt="Girl with digicam">
     </div>
 
-    <div class="photo three">
-      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=85">
+    <div class="hero-small-two">
+      <img
+        src="images/itgirl_scream_2.jpg"
+        alt="Editorial girl portrait">
     </div>
-
-    <div class="tape one"></div>
-    <div class="tape two"></div>
 
     <div class="note">
       You've got your passion.<br>
@@ -886,20 +1139,20 @@ footer{
 </header>
 
 
-<!-- MOVING LINE -->
+<!-- MARQUEE -->
 
 <div class="marquee">
 
   <div class="marquee-track">
 
-    <span>Girls supporting girls ✦</span>
-    <span>Building our own table ✦</span>
-    <span>Ideas worth sharing ✦</span>
-    <span>Main character energy ✦</span>
-    <span>Girls supporting girls ✦</span>
-    <span>Building our own table ✦</span>
-    <span>Ideas worth sharing ✦</span>
-    <span>Main character energy ✦</span>
+    <span>girls supporting girls</span>
+    <span>building our own table</span>
+    <span>main character energy</span>
+    <span>ideas worth sharing</span>
+    <span>girls supporting girls</span>
+    <span>building our own table</span>
+    <span>main character energy</span>
+    <span>ideas worth sharing</span>
 
   </div>
 
@@ -910,37 +1163,40 @@ footer{
 
 <section class="magazine" id="magazine">
 
-  <div class="magazine-head">
+  <div class="section-top">
 
     <h2>The Magazine</h2>
 
-    <p>
-      Stories · Interviews · Ideas
-    </p>
+    <a href="#" class="view-all">
+      View all issues →
+    </a>
 
   </div>
 
 
-  <div class="magazine-grid">
+  <div class="mag-grid">
 
 
-    <article class="story">
+    <!-- FEATURE -->
 
-      <div class="story-image">
+    <article class="article featured">
 
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85">
+      <img
+        src="images/magazine_cover_story.jpg"
+        alt="Magazine cover story">
 
+      <div class="article-label">
+        Cover Story
       </div>
 
-      <span class="story-tag">Style</span>
-
       <h3>
-        Summer in the city
+        How we romanticize
+        our everyday.
       </h3>
 
       <p>
-        Outfits, places, moods and the little details
-        that make ordinary days feel cinematic.
+        Little rituals, main character moments,
+        and a life that actually feels like you.
       </p>
 
       <a href="#" class="read">
@@ -950,23 +1206,25 @@ footer{
     </article>
 
 
-    <article class="story">
+    <!-- ARTICLE -->
 
-      <div class="story-image">
+    <article class="article">
 
-        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85">
+      <img
+        src="images/magazine_style.jpg"
+        alt="Style editorial">
 
+      <div class="article-label">
+        Style
       </div>
 
-      <span class="story-tag">Mind</span>
-
       <h3>
-        Notes to my future self
+        Summer nights
+        & city lights
       </h3>
 
       <p>
-        Reminders for the girl becoming more.
-        Take what you need. Leave the rest.
+        Outfits, places and moods.
       </p>
 
       <a href="#" class="read">
@@ -976,23 +1234,24 @@ footer{
     </article>
 
 
-    <article class="story">
+    <article class="article">
 
-      <div class="story-image">
+      <img
+        src="images/magazine_mind.jpg"
+        alt="Notes editorial">
 
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85">
-
+      <div class="article-label">
+        Mind
       </div>
 
-      <span class="story-tag">Culture</span>
-
       <h3>
-        The main character energy
+        Notes to my
+        future self.
       </h3>
 
       <p>
-        How to romanticize your everyday without
-        pretending your life has to be perfect.
+        Reminders for the girl
+        becoming more.
       </p>
 
       <a href="#" class="read">
@@ -1000,222 +1259,229 @@ footer{
       </a>
 
     </article>
+
+
+    <article class="article">
+
+      <img
+        src="images/magazine_culture.jpg"
+        alt="Culture editorial">
+
+      <div class="article-label">
+        Culture
+      </div>
+
+      <h3>
+        The main
+        character energy.
+      </h3>
+
+      <p>
+        How to romanticize
+        your everyday.
+      </p>
+
+      <a href="#" class="read">
+        Read more →
+      </a>
+
+    </article>
+
 
   </div>
 
 </section>
 
 
-<!-- FEATURE STORY -->
+<!-- CLUB FILES -->
 
-<section class="feature" id="club">
+<section class="files" id="feed">
 
-  <div class="feature-box">
+  <div class="files-copy">
 
-    <div class="feature-image">
-
-      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=85">
-
+    <div class="files-label">
+      Club Files
     </div>
 
-    <div class="feature-copy">
+    <h2>
+      Conversations
+      that matter.
+    </h2>
 
-      <span class="story-tag">
-        The Club Files
+    <p>
+      Real talks with real girls about
+      ambition, identity, friendship,
+      creativity, love, and everything
+      in between.
+    </p>
+
+    <a href="#" class="files-link">
+      Enter the club →
+    </a>
+
+  </div>
+
+
+  <div class="files-grid">
+
+
+    <div class="polaroid">
+      <img
+        src="images/club_file_sleepover.jpg"
+        alt="Baddies Club night">
+      <span>
+        late night thoughts
       </span>
+    </div>
+
+
+    <div class="polaroid">
+      <img
+        src="images/club_file_group.jpg"
+        alt="Girls together">
+      <span>
+        girls night
+      </span>
+    </div>
+
+
+    <div class="polaroid">
+      <img
+        src="images/club_file_baddies.jpg"
+        alt="Baddies Club editorial">
+      <span>
+        baddies club
+      </span>
+    </div>
+
+
+    <div class="polaroid">
+      <img
+        src="images/club_file_lips.jpg"
+        alt="Beauty editorial">
+      <span>
+        after hours
+      </span>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- MEMBERSHIP -->
+
+<section class="membership" id="membership">
+
+  <div class="membership-inner">
+
+
+    <div class="membership-copy">
+
+      <div class="kicker">
+        Membership
+      </div>
 
       <h2>
-        Conversations<br>
-        that matter.
+        Your seat
+        is waiting.
       </h2>
 
       <p>
-        We talk about ambition, friendships, identity,
-        culture, creativity and the weird little things
-        nobody puts in the group chat.
+        Baddies Club is a space for girls who
+        want somewhere to read, create,
+        connect, discover and become.
       </p>
 
-      <button class="primary" onclick="goJoin()">
-        Enter the club
+      <button
+        class="primary-btn"
+        onclick="document.getElementById('join').scrollIntoView()">
+        Join the club →
       </button>
 
     </div>
 
-  </div>
 
-</section>
+    <div class="membership-card">
 
-
-<!-- EDITORIAL -->
-
-<section class="editorial" id="about">
-
-  <div class="editorial-title">
-
-    <span>From the editors</span>
-
-    <h2>Things we're thinking about.</h2>
-
-  </div>
-
-
-  <div class="editorial-grid">
-
-
-    <article class="editorial-card">
-
-      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=85">
-
-      <div class="editorial-card-content">
-
-        <span class="story-tag">Ideas</span>
-
-        <h3>
-          Knowledge is a personality trait.
-        </h3>
-
-        <p>
-          Things worth reading, questioning and arguing about.
-        </p>
-
+      <div class="card-brand">
+        baddies club
       </div>
 
-    </article>
-
-
-    <article class="editorial-card">
-
-      <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=700&q=85">
-
-      <div class="editorial-card-content">
-
-        <span class="story-tag">Life</span>
-
-        <h3>
-          Notes from a becoming girl.
-        </h3>
-
-        <p>
-          You don't need to have it all figured out.
-        </p>
-
+      <div class="card-number">
+        2026 · 09 · 22
       </div>
 
-    </article>
-
-
-    <article class="editorial-card">
-
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=700&q=85">
-
-      <div class="editorial-card-content">
-
-        <span class="story-tag">Community</span>
-
-        <h3>
-          Building our own table.
-        </h3>
-
-        <p>
-          Why the best rooms are the ones we create ourselves.
-        </p>
-
+      <div class="card-bottom">
+        <span>Member</span>
+        <span>Girls supporting girls</span>
       </div>
 
-    </article>
+    </div>
 
-
-    <article class="editorial-card">
-
-      <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=85">
-
-      <div class="editorial-card-content">
-
-        <span class="story-tag">Culture</span>
-
-        <h3>
-          Make something worth remembering.
-        </h3>
-
-        <p>
-          Creativity is not a side quest.
-        </p>
-
-      </div>
-
-    </article>
 
   </div>
-
-</section>
-
-
-<!-- MANIFESTO -->
-
-<section class="manifesto">
-
-  <p>
-    “We're not just building a club.
-    <span>We're building a movement.</span>”
-  </p>
 
 </section>
 
 
 <!-- JOIN -->
 
-<section class="join" id="membership">
+<section class="join" id="join">
 
-  <div class="join-card">
-
-    <span class="story-tag">
-      Membership
-    </span>
-
-    <h2>
-      Come sit with us.
-    </h2>
-
-    <p>
-      Join Baddies Club for conversations, stories,
-      ideas, creative projects and a community of girls
-      who are figuring it out together.
-    </p>
-
-    <form class="join-form" id="joinForm">
-
-      <input
-        type="email"
-        id="joinEmail"
-        placeholder="Your email address"
-        required
-      >
-
-      <button type="submit">
-        Apply →
-      </button>
-
-    </form>
-
-    <div id="joinMessage"
-         style="margin-top:18px;font-size:13px;">
-    </div>
-
+  <div class="kicker">
+    Girls supporting girls
   </div>
+
+  <h2>
+    Come sit with us.
+  </h2>
+
+  <p>
+    Join Baddies Club for exclusive stories,
+    conversations, events, creative projects
+    and a community that actually gets it.
+  </p>
+
+
+  <form class="email-form" id="joinForm">
+
+    <input
+      type="email"
+      id="joinEmail"
+      placeholder="your email address"
+      required>
+
+    <button type="submit">
+      JOIN NOW →
+    </button>
+
+  </form>
+
+  <p id="joinMessage"
+     style="margin-top:18px;font-size:13px;">
+  </p>
 
 </section>
 
 
 <!-- FOOTER -->
 
-<footer>
+<footer id="about">
 
   <div class="footer-logo">
     Baddies <em>Club</em>
   </div>
 
-  <div>
-    © 2026 Baddies Club · Made for becoming.
+  <div class="footer-links">
+
+    <a href="#club">The Club</a>
+    <a href="#feed">The Feed</a>
+    <a href="#magazine">Magazine</a>
+    <a href="#membership">Membership</a>
+    <a href="#about">About</a>
+
   </div>
 
 </footer>
@@ -1223,26 +1489,11 @@ footer{
 
 <script>
 
-/* ================= SCROLL TO JOIN ================= */
+/* =========================
+   JOIN FORM
+========================= */
 
-function goJoin(){
-
-  document
-    .getElementById("membership")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
-
-}
-
-
-/* ================= JOIN FORM ================= */
-
-const joinForm =
-  document.getElementById("joinForm");
-
-const joinMessage =
-  document.getElementById("joinMessage");
+const joinForm = document.getElementById("joinForm");
 
 joinForm.addEventListener("submit", function(e){
 
@@ -1251,26 +1502,33 @@ joinForm.addEventListener("submit", function(e){
   const email =
     document.getElementById("joinEmail").value.trim();
 
-  if(!email) return;
+  const message =
+    document.getElementById("joinMessage");
 
-  joinMessage.textContent =
-    "You're on the list ✦ We'll be in touch.";
+  if(!email){
+    return;
+  }
 
-  joinMessage.style.color =
-    "#dc718a";
+  message.textContent =
+    "You're on the list ✦ Welcome to Baddies Club.";
+
+  message.style.color =
+    "#e58aa0";
 
   joinForm.reset();
 
 });
 
 
-/* ================= ACTIVE NAV ================= */
+/* =========================
+   ACTIVE NAV
+========================= */
 
 const sections =
   document.querySelectorAll("section[id]");
 
 const navLinks =
-  document.querySelectorAll(".navlinks a");
+  document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
 
@@ -1282,7 +1540,7 @@ window.addEventListener("scroll", () => {
       section.offsetTop - 150;
 
     if(window.scrollY >= top){
-      current = section.id;
+      current = section.getAttribute("id");
     }
 
   });
