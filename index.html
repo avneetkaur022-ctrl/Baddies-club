@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Baddies Club — Soft Life, Strong Will</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8eee8;
+      --cream-dark: #f1dfd5;
+      --pink: #e98da1;
+      --pink-dark: #d96e87;
+      --lavender: #e6d9f3;
+      --mint: #d9e9df;
+      --peach: #f3c7a9;
+      --brown: #3c2632;
+      --muted: #765d69;
+      --white: #fffaf7;
+      --line: rgba(60,38,50,.13);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: Inter, sans-serif;
+      overflow-x: hidden;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .serif {
+      font-family: "DM Serif Display", serif;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 76px;
+      padding: 0 6vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(248,238,232,.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: "DM Serif Display", serif;
+      font-size: 25px;
+      letter-spacing: -.5px;
+    }
+
+    .logo span {
+      color: var(--pink-dark);
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    .nav-button {
+      border: 0;
+      background: var(--brown);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .nav-button:hover {
+      background: var(--pink-dark);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      padding: 100px 6vw;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(4px);
+      opacity: .65;
+      pointer-events: none;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 360px;
+      height: 360px;
+      background: var(--lavender);
+      left: -130px;
+      top: -80px;
+    }
+
+    .orb.two {
+      width: 300px;
+      height: 300px;
+      background: var(--mint);
+      right: -100px;
+      bottom: -80px;
+      animation-delay: 2s;
+    }
+
+    .orb.three {
+      width: 150px;
+      height: 150px;
+      background: var(--peach);
+      right: 13%;
+      top: 18%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%,100% {
+        transform: translate(0,0);
+      }
+      50% {
+        transform: translate(25px,-25px);
+      }
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 2;
+
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 2;
+
+      max-width: 900px;
+
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(65px, 10vw, 145px);
+      font-weight: 400;
+      line-height: .85;
+      letter-spacing: -5px;
+    }
+
+    .hero h1 em {
+      color: var(--pink-dark);
+      font-style: italic;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+
+      max-width: 520px;
+      margin: 35px auto;
+
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .primary {
+      border: 0;
+      background: var(--brown);
+      color: white;
+      padding: 16px 30px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(60,38,50,.18);
+      transition: .25s ease;
+    }
+
+    .primary:hover {
+      background: var(--pink-dark);
+      transform: translateY(-3px);
+    }
+
+    .secondary {
+      background: transparent;
+      color: var(--brown);
+      border: 1px solid var(--brown);
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .secondary:hover {
+      background: var(--brown);
+      color: white;
+    }
+
+    /* MARQUEE */
+
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--cream-dark);
+      padding: 16px 0;
+    }
+
+    .marquee-track {
+      width: max-content;
+      display: flex;
+      gap: 12px;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-item {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .marquee-item:nth-child(2n) {
+      background: var(--pink);
+    }
+
+    .marquee-item:nth-child(3n) {
+      background: var(--lavender);
+    }
+
+    .marquee-item:nth-child(4n) {
+      background: var(--mint);
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 110px 6vw;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .tag {
+      color: var(--pink-dark);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(42px, 6vw, 70px);
+      font-weight: 400;
+      line-height: .95;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    /* PILLARS */
+
+    .pillars {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .pillar {
+      min-height: 330px;
+      padding: 35px;
+
+      border: 1px solid var(--line);
+      border-radius: 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      transition: .3s ease;
+    }
+
+    .pillar:hover {
+      transform: translateY(-8px) rotate(-1deg);
+      box-shadow: 0 25px 50px rgba(60,38,50,.12);
+    }
+
+    .pillar:nth-child(1) {
+      background: var(--lavender);
+    }
+
+    .pillar:nth-child(2) {
+      background: var(--mint);
+    }
+
+    .pillar:nth-child(3) {
+      background: var(--peach);
+    }
+
+    .pillar-number {
+      font-family: "Permanent Marker", cursive;
+      font-size: 25px;
+      margin-bottom: auto;
+    }
+
+    .pillar h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* EDITORIAL */
+
+    .editorial {
+      background: var(--cream-dark);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .editorial-grid {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 25px;
+    }
+
+    .editorial-main,
+    .editorial-small {
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .editorial-main {
+      min-height: 600px;
+      background:
+        linear-gradient(140deg,#e98da1,#f3c7a9 55%,#e6d9f3);
+      padding: 45px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .editorial-main h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(50px,7vw,90px);
+      line-height: .9;
+      font-weight: 400;
+    }
+
+    .editorial-side {
+      display: grid;
+      gap: 25px;
+    }
+
+    .editorial-small {
+      min-height: 287px;
+      padding: 32px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .editorial-small:first-child {
+      background: var(--lavender);
+    }
+
+    .editorial-small:last-child {
+      background: var(--mint);
+    }
+
+    .editorial-small h4 {
+      font-family: "DM Serif Display", serif;
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .scribble {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      font-family: "Permanent Marker", cursive;
+      transform: rotate(8deg);
+      font-size: 18px;
+    }
+
+    /* MEMBERSHIP */
+
+    .membership {
+      background: var(--brown);
+      color: var(--cream);
+    }
+
+    .membership .section-title p {
+      color: #d8c5ce;
+    }
+
+    .membership .tag {
+      color: var(--pink);
+    }
+
+    .member-card {
+      max-width: 900px;
+      margin: 0 auto 70px;
+
+      min-height: 350px;
+      border-radius: 32px;
+
+      background:
+        linear-gradient(125deg,#e98da1,#e6d9f3 48%,#f3c7a9);
+
+      color: var(--brown);
+
+      padding: 40px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      box-shadow: 0 30px 70px rgba(0,0,0,.25);
+      transform: rotate(-1deg);
+
+      transition: transform .5s ease;
+    }
+
+    .member-card:hover {
+      transform: rotate(1deg) translateY(-8px);
+    }
+
+    .member-top {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+    }
+
+    .member-brand {
+      font-family: "DM Serif Display", serif;
+      text-transform: lowercase;
+      font-size: 35px;
+      letter-spacing: 0;
+    }
+
+    .chip {
+      width: 50px;
+      height: 38px;
+      border-radius: 7px;
+      background: #e5c87c;
+      margin-top: 30px;
+    }
+
+    .member-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .member-name {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .member-id {
+      font-family: "Permanent Marker", cursive;
+      font-size: 22px;
+    }
+
+    /* TIERS */
+
+    .tiers {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .tier {
+      padding: 35px;
+      border-radius: 28px;
+      background: var(--cream);
+      color: var(--brown);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tier.featured {
+      background: var(--pink);
+      transform: translateY(-12px);
+    }
+
+    .tier-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      margin-bottom: 18px;
+    }
+
+    .tier h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 38px;
+      font-weight: 400;
+    }
+
+    .price {
+      font-family: "DM Serif Display", serif;
+      font-size: 45px;
+      margin: 18px 0;
+    }
+
+    .price span {
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+    }
+
+    .tier ul {
+      list-style: none;
+      margin: 10px 0 30px;
+      flex: 1;
+    }
+
+    .tier li {
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .tier button {
+      border: 0;
+      background: var(--brown);
+      color: white;
+      border-radius: 999px;
+      padding: 14px;
+      font-weight: 700;
+    }
+
+    /* SIGNUP */
+
+    .signup {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .signup-box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 45px;
+      box-shadow: 0 30px 70px rgba(60,38,50,.12);
+    }
+
+    .signup-box h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 42px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .signup-box > p {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 12px 0 30px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 15px 17px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+      color: var(--brown);
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: var(--pink-dark);
+      box-shadow: 0 0 0 4px rgba(217,110,135,.12);
+    }
+
+    .signup-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 16px;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: var(--brown);
+      color: white;
+
+      font-weight: 800;
+    }
+
+    .signup-submit:hover {
+      background: var(--pink-dark);
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 15px;
+      min-height: 20px;
+      font-size: 13px;
+      color: var(--pink-dark);
+    }
+
+    /* QUOTES */
+
+    .quotes {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .quote {
+      padding: 32px;
+      border-radius: 28px;
+    }
+
+    .quote:nth-child(1) {
+      background: var(--lavender);
+    }
+
+    .quote:nth-child(2) {
+      background: var(--mint);
+    }
+
+    .quote:nth-child(3) {
+      background: var(--peach);
+    }
+
+    .quote p {
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-size: 22px;
+      line-height: 1.4;
+      margin-bottom: 25px;
+    }
+
+    .quote strong {
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 50px 6vw;
+      background: var(--cream-dark);
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-brand {
+      font-family: "DM Serif Display", serif;
+      color: var(--brown);
+      font-size: 22px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .pillars,
+      .tiers,
+      .quotes {
+        grid-template-columns: 1fr;
+      }
+
+      .tier.featured {
+        transform: none;
+      }
+
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-main {
+        min-height: 450px;
+      }
+
+      section {
+        padding: 80px 5vw;
+      }
+    }
+
+    @media(max-width: 520px) {
+      nav {
+        padding: 0 5vw;
+      }
+
+      .nav-button {
+        padding: 10px 15px;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding: 80px 5vw;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      .member-card {
+        min-height: 280px;
+        padding: 25px;
+      }
+
+      .member-brand {
+        font-size: 27px;
+      }
+
+      .signup-box {
+        padding: 30px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">Baddies <span>Club</span></a>
+
+    <div class="nav-links">
+      <a href="#club">The Club</a>
+      <a href="#feed">The Feed</a>
+      <a href="#membership">Membership</a>
+    </div>
+
+    <button class="nav-button"
+      onclick="document.getElementById('signup').scrollIntoView()">
+      Join the Club
+    </button>
+  </nav>
+
+  <header class="hero">
+
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+    <span class="eyebrow">
+      Welcome to the club
+    </span>
+
+    <h1>
+      Soft life.<br>
+      <em>Strong</em> will.
+    </h1>
+
+    <p class="hero-copy">
+      Baddies Club is a digital space for girls who are
+      curious, creative, ambitious and becoming.
+      Come for the energy. Stay for the community.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="primary"
+        onclick="document.getElementById('signup').scrollIntoView()">
+        Become a member
+      </button>
+
+      <button class="secondary"
+        onclick="document.getElementById('club').scrollIntoView()">
+        Explore the club
+      </button>
+    </div>
+
+  </header>
+
+  <div class="marquee">
+    <div class="marquee-track">
+
+      <span class="marquee-item">main character energy</span>
+      <span class="marquee-item">soft life, hard boundaries</span>
+      <span class="marquee-item">protect your peace</span>
+      <span class="marquee-item">girls supporting girls</span>
+      <span class="marquee-item">becoming her</span>
+      <span class="marquee-item">romanticise your life</span>
+
+      <span class="marquee-item">main character energy</span>
+      <span class="marquee-item">soft life, hard boundaries</span>
+      <span class="marquee-item">protect your peace</span>
+      <span class="marquee-item">girls supporting girls</span>
+      <span class="marquee-item">becoming her</span>
+      <span class="marquee-item">romanticise your life</span>
+
+    </div>
+  </div>
+
+  <section id="club">
+
+    <div class="section-title">
+      <span class="tag">The Club</span>
+
+      <h2>
+        More than an aesthetic.
+      </h2>
+
+      <p>
+        Baddies Club is where beauty meets brains,
+        culture meets conversation and ambition meets community.
+      </p>
+    </div>
+
+    <div class="pillars">
+
+      <article class="pillar">
+        <div class="pillar-number">01</div>
+
+        <h3>Style</h3>
+
+        <p>
+          Fashion, beauty, personal expression and
+          finding the things that feel completely you.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-number">02</div>
+
+        <h3>Mind</h3>
+
+        <p>
+          Ideas, conversations, culture and perspectives
+          worth thinking about.
+        </p>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-number">03</div>
+
+        <h3>Ambition</h3>
+
+        <p>
+          Projects, education, careers and big dreams.
+          Soft does not mean unambitious.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="editorial" id="feed">
+
+    <div class="section-title">
+      <span class="tag">The Feed</span>
+
+      <h2>
+        Your little corner of the internet.
+      </h2>
+
+      <p>
+        A constantly evolving editorial world of
+        ideas, inspiration, culture and girlhood.
+      </p>
+    </div>
+
+    <div class="editorial-grid">
+
+      <article class="editorial-main">
+        <span class="scribble">currently obsessed ✦</span>
+
+        <h3>
+          Become<br>
+          your own<br>
+          favourite.
+        </h3>
+      </article>
+
+      <div class="editorial-side">
+
+        <article class="editorial-small">
+          <span class="scribble">read this →</span>
+
+          <h4>
+            Things worth<br>
+            knowing.
+          </h4>
+        </article>
+
+        <article class="editorial-small">
+          <span class="scribble">save this ♡</span>
+
+          <h4>
+            Your life,<br>
+            your rules.
+          </h4>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="membership" id="membership">
+
+    <div class="section-title">
+      <span class="tag">Membership</span>
+
+      <h2>
+        Your card.<br>
+        Your club.
+      </h2>
+
+      <p>
+        Membership gives you access to the full Baddies Club
+        experience.
+      </p>
+    </div>
+
+    <div class="member-card">
+
+      <div class="member-top">
+        <span class="member-brand">baddies club</span>
+        <span>THE CLUB</span>
+      </div>
+
+      <div class="chip"></div>
+
+      <div class="member-bottom">
+
+        <div>
+          <div class="member-name">
+            Member
+          </div>
+        </div>
+
+        <div class="member-id">
+          2026 ✦
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="tiers">
+
+      <article class="tier">
+
+        <span class="tier-label">
+          Free
+        </span>
+
+        <h3>
+          Insider
+        </h3>
+
+        <div class="price">
+          $0<span>/ forever</span>
+        </div>
+
+        <ul>
+          <li>Editorial access</li>
+          <li>Club updates</li>
+          <li>Monthly newsletter</li>
+        </ul>
+
+        <button onclick="scrollToSignup()">
+          Join free
+        </button>
+
+      </article>
+
+      <article class="tier featured">
+
+        <span class="tier-label">
+          Most loved
+        </span>
+
+        <h3>
+          The Club
+        </h3>
+
+        <div class="price">
+          $79<span>/ year</span>
+        </div>
+
+        <ul>
+          <li>Full members area</li>
+          <li>Exclusive editorial</li>
+          <li>Community access</li>
+          <li>Members-only drops</li>
+        </ul>
+
+        <button onclick="scrollToSignup()">
+          Join the club
+        </button>
+
+      </article>
+
+      <article class="tier">
+
+        <span class="tier-label">
+          Premium
+        </span>
+
+        <h3>
+          Inner Circle
+        </h3>
+
+        <div class="price">
+          $149<span>/ year</span>
+        </div>
+
+        <ul>
+          <li>Everything in The Club</li>
+          <li>Priority access</li>
+          <li>Exclusive events</li>
+          <li>Quarterly surprise</li>
+        </ul>
+
+        <button onclick="scrollToSignup()">
+          Go all in
+        </button>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <section id="signup">
+
+    <div class="signup">
+
+      <div class="section-title">
+        <span class="tag">Come inside</span>
+
+        <h2>
+          Your membership starts here.
+        </h2>
+
+        <p>
+          Create your Baddies Club account.
+        </p>
+      </div>
+
+      <div class="signup-box">
+
+        <h3>
+          Join Baddies Club
+        </h3>
+
+        <p>
+          Create your account to become part of the club.
+        </p>
+
+        <form id="signupForm">
+
+          <div class="field">
+            <label for="name">
+              NAME
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="email">
+              EMAIL
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="you@email.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="password">
+              PASSWORD
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            >
+          </div>
+
+          <button class="signup-submit" type="submit">
+            JOIN BADDIES CLUB ↗
+          </button>
+
+          <div id="status"></div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+
+      <span class="tag">
+        From the club
+      </span>
+
+      <h2>
+        Baddies say it best.
+      </h2>
+
+    </div>
+
+    <div class="quotes">
+
+      <article class="quote">
+        <p>
+          "It's not about looking like a baddie.
+          It's about feeling like yourself."
+        </p>
+
+        <strong>
+          — Club member
+        </strong>
+      </article>
+
+      <article class="quote">
+        <p>
+          "The best part is that everyone here
+          is building something."
+        </p>
+
+        <strong>
+          — Club member
+        </strong>
+      </article>
+
+      <article class="quote">
+        <p>
+          "Soft life, strong boundaries and
+          absolutely no explaining myself."
+        </p>
+
+        <strong>
+          — Club member
+        </strong>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="section-title">
+
+      <span class="tag">
+        Baddies Club
+      </span>
+
+      <h2>
+        Come for the aesthetic.<br>
+        Stay for the energy.
+      </h2>
+
+      <p>
+        Your next era starts here.
+      </p>
+
+      <button class="primary"
+        onclick="scrollToSignup()"
+        style="margin-top:25px">
+        Join the Club
+      </button>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div>
+      <div class="footer-brand">
+        Baddies Club
+      </div>
+
+      <div>
+        © 2026 Baddies Club
+      </div>
+    </div>
+
+    <div>
+      <a href="#">Instagram</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="#">TikTok</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="mailto:avneetkaur022@icloud.com">
+        Contact
+      </a>
+    </div>
+
+  </footer>
+
+  <script>
+    function scrollToSignup() {
+      document
+        .getElementById("signup")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+
+    const form = document.getElementById("signupForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (!name || !email) return;
+
+      status.textContent =
+        "You're on the list ✦ We'll be in touch.";
+
+      status.style.color = "#d96e87";
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
